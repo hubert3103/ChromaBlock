@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c41ywpnm7v6fu"]
 
 [ext_resource type="Texture2D" uid="uid://d02jat5sck4s8" path="res://art/Character/Human_1_Run0.png" id="1_e6c00"]
-[ext_resource type="Script" uid="uid://bxhgfouewr4ao" path="res://Marijn/player.gd" id="1_lq7gc"]
+[ext_resource type="Script" uid="uid://bxhgfouewr4ao" path="res://_Main/Player/player.gd" id="1_lq7gc"]
 [ext_resource type="Texture2D" uid="uid://8vvey4yhyylx" path="res://art/Character/Human_1_Run1.png" id="2_84k03"]
 [ext_resource type="Texture2D" uid="uid://dkdn3tnuya80a" path="res://art/Character/Human_3_Run0.png" id="2_i4gyj"]
 [ext_resource type="Texture2D" uid="uid://cauxtkfhxq7mu" path="res://art/Character/Human_1_Run2.png" id="3_q5h1f"]
@@ -59,8 +59,6 @@
 [ext_resource type="Texture2D" uid="uid://buonri54gwog5" path="res://art/Character/Human_0_Run5.png" id="49_f44fr"]
 [ext_resource type="Texture2D" uid="uid://cwy4pegonp3n" path="res://art/Character/Human_0_Run9.png" id="50_sg2wl"]
 [ext_resource type="Texture2D" uid="uid://dbpt2j2og436v" path="res://art/Character/Human_0_Run8.png" id="51_hk6cr"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e6c00"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w401x"]
 animations = [{
@@ -412,9 +410,6 @@ animations = [{
 [node name="Player" type="CharacterBody2D" unique_id=113525314]
 script = ExtResource("1_lq7gc")
 metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1639801564]
-shape = SubResource("CapsuleShape2D_e6c00")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1294496515]
 sprite_frames = SubResource("SpriteFrames_w401x")

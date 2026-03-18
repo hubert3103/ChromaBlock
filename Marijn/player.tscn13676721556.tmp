@@ -411,6 +411,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" unique_id=113525314]
 script = ExtResource("1_lq7gc")
+speed = null
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1639801564]
@@ -418,4 +419,4 @@ shape = SubResource("CapsuleShape2D_e6c00")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1294496515]
 sprite_frames = SubResource("SpriteFrames_w401x")
-animation = &"IdleLeft"
+animation = &"IdleUpRight"

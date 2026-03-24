@@ -407,10 +407,22 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_j6lof"]
+radius = 18.0
+
 [node name="Player" type="CharacterBody2D" unique_id=113525314]
+position = Vector2(1, 2)
 script = ExtResource("1_lq7gc")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1294496515]
+position = Vector2(2, -192)
 sprite_frames = SubResource("SpriteFrames_w401x")
 animation = &"IdleLeft"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=494221087]
+position = Vector2(1, -1)
+shape = SubResource("CircleShape2D_j6lof")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=72991539]
+position_smoothing_enabled = true

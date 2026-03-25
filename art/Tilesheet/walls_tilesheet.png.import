@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxfy8oh43a2q2"
-path="res://.godot/imported/wall_W.png-66e40696611e4ddbe084999f582bf915.ctex"
+uid="uid://b7pc5mll6cdlt"
+path="res://.godot/imported/walls_tilesheet.png-bcdbe8582d78586ebc7d25684775aad7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Isometric/wall_W.png"
-dest_files=["res://.godot/imported/wall_W.png-66e40696611e4ddbe084999f582bf915.ctex"]
+source_file="res://art/Tilesheet/walls_tilesheet.png"
+dest_files=["res://.godot/imported/walls_tilesheet.png-bcdbe8582d78586ebc7d25684775aad7.ctex"]
 
 [params]
 

@@ -1,18 +1,21 @@
-[gd_scene format=3 uid="uid://cahbgn8fsikxk"]
+[gd_scene format=3 uid="uid://ceninen4wl1vr"]
 
 [ext_resource type="Script" uid="uid://duacwllpnsbu4" path="res://Marijn/crate.gd" id="1_rxb5b"]
 [ext_resource type="Texture2D" uid="uid://bgfmx3lamubgk" path="res://art/Isometric/crate_E.png" id="1_vc41l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxb5b"]
-size = Vector2(103, 107)
+size = Vector2(90.50967, 90.509674)
 
 [node name="Crate" type="CharacterBody2D" unique_id=2143499831]
 script = ExtResource("1_rxb5b")
+push_speed = 25
 
 [node name="CrateSprite" type="Sprite2D" parent="." unique_id=437452478]
 position = Vector2(108, -37)
 texture = ExtResource("1_vc41l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1592186791]
-position = Vector2(108.5, 115.5)
+position = Vector2(108, 114)
+rotation = 0.7853982
+scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_rxb5b")

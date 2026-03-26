@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://st411ri0vus2" path="res://art/Tilesheet/door_tilesheet.png" id="3_tmoik"]
 [ext_resource type="Texture2D" uid="uid://k2gj1cdfkcae" path="res://art/Tilesheet/block_tilesheet.png" id="5_q0ovb"]
 [ext_resource type="Texture2D" uid="uid://bagaenui0u2ni" path="res://art/Tilesheet/stair_tilesheet.png" id="6_blb4b"]
-[ext_resource type="PackedScene" uid="uid://cahbgn8fsikxk" path="res://Marijn/crate.tscn" id="8_q0ovb"]
+[ext_resource type="PackedScene" uid="uid://ceninen4wl1vr" path="res://Marijn/crate.tscn" id="8_q0ovb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vpdkp"]
 texture = ExtResource("1_vpdkp")
@@ -395,7 +395,7 @@ tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
 
 [node name="Crate" parent="." unique_id=2143499831 instance=ExtResource("8_q0ovb")]
-position = Vector2(535, 134)
+position = Vector2(532, 133)
 
 [node name="Player" parent="." unique_id=113525314 instance=ExtResource("3_8q58m")]
 position = Vector2(0, 0)

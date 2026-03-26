@@ -2,8 +2,6 @@ extends CharacterBody2D
 
 @export var speed = 100
 
-# Track the last logical direction for idle
-# Can be: "Up", "Down", "Left", "Right", "UpRight", "UpLeft", "DownRight", "DownLeft"
 var last_direction = "Down"
 
 func _physics_process(delta):
@@ -26,9 +24,23 @@ func _physics_process(delta):
 		# --- Movement ---
 		input_vector = input_vector.normalized()
 		velocity = input_vector * speed
-		move_and_slide()
+	else:
+		velocity = Vector2.ZERO
 
-		# --- Determine walking animation ---
+	move_and_slide()
+
+	# --- PUSHING (AFTER MOVE) ---
+	if velocity != Vector2.ZERO:
+		for i in get_slide_collision_count():
+			var collision = get_slide_collision(i)
+			var collider = collision.get_collider()
+
+			if collider != null and collider.has_method("push"):
+				var push_dir = get_push_direction(velocity)
+				collider.push(push_dir)
+
+	# --- Animation ---
+	if velocity != Vector2.ZERO:
 		var anim_name = ""
 		var flip_h = false
 
@@ -36,14 +48,14 @@ func _physics_process(delta):
 			anim_name = "UpRight"
 			last_direction = "UpRight"
 		elif x < 0 and y < 0:
-			anim_name = "UpRight"  # mirrored
+			anim_name = "UpRight"
 			flip_h = true
 			last_direction = "UpLeft"
 		elif x > 0 and y > 0:
 			anim_name = "DownRight"
 			last_direction = "DownRight"
 		elif x < 0 and y > 0:
-			anim_name = "DownRight"  # mirrored
+			anim_name = "DownRight"
 			flip_h = true
 			last_direction = "DownLeft"
 		elif y < 0:
@@ -56,7 +68,7 @@ func _physics_process(delta):
 			anim_name = "Right"
 			last_direction = "Right"
 		elif x < 0:
-			anim_name = "Right"  # mirrored
+			anim_name = "Right"
 			flip_h = true
 			last_direction = "Left"
 
@@ -64,8 +76,14 @@ func _physics_process(delta):
 		$AnimatedSprite2D.flip_h = flip_h
 		$AnimatedSprite2D.play()
 	else:
-		# --- Idle animation based on last logical direction ---
-		velocity = Vector2.ZERO
 		$AnimatedSprite2D.animation = "Idle" + last_direction
-		$AnimatedSprite2D.flip_h = false  # idle sprites already exist for left
+		$AnimatedSprite2D.flip_h = false
 		$AnimatedSprite2D.play()
+
+
+# --- 4 DIRECTION PUSH FUNCTION ---
+func get_push_direction(vel: Vector2) -> Vector2:
+	if abs(vel.x) > abs(vel.y):
+		return Vector2(sign(vel.x), 0)
+	else:
+		return Vector2(0, sign(vel.y))

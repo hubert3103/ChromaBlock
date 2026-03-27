@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bagaenui0u2ni" path="res://art/Tilesheet/stair_tilesheet.png" id="6_blb4b"]
 [ext_resource type="PackedScene" uid="uid://ddaxdlvfei4vg" path="res://Marijn/Level1/floor_switch.tscn" id="7_blb4b"]
 [ext_resource type="PackedScene" uid="uid://ceninen4wl1vr" path="res://Marijn/crate.tscn" id="8_q0ovb"]
+[ext_resource type="PackedScene" uid="uid://bx66tuty2v77e" path="res://Marijn/Level1/door.tscn" id="9_wvqtl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vpdkp"]
 texture = ExtResource("1_vpdkp")
@@ -386,23 +387,28 @@ tile_proxies/coords_level = [[1, Vector2i(0, 1)], [46, Vector2i(0, 1)], [1, Vect
 script = ExtResource("1_jj0qm")
 
 [node name="FloorLayer" type="TileMapLayer" parent="." unique_id=192260591]
-tile_map_data = PackedByteArray("AAACAP//AAAIAAMAAAABAAAAAAAIAAMAAAAAAAEAAAAIAAMAAAADAP7/AAAIAAMAAAAEAP7/AAAIAAMAAAAFAP7/AAAIAAMAAAAGAP7/AAAIAAMAAAAFAP//AAAIAAMAAAAEAAAAAAAIAAMAAAADAAEAAAAIAAMAAAACAAEAAAAIAAMAAAABAAEAAAAIAAMAAAACAAAAAAAIAAMAAAADAP//AAAIAAMAAAAEAP//AAAIAAMAAAADAAAAAAAIAAMAAAAHAP7/AAAIAAMAAAAFAAAAAAAIAAMAAAAGAP//AAAIAAMAAAAEAAEAAAAIAAMAAAAFAPz/AAAIAAMAAAAEAP3/AAAIAAMAAAAGAPz/AAAIAAMAAAAFAP3/AAAIAAMAAAAGAP3/AAAIAAMAAAAHAPz/AAAIAAMAAAAIAPz/AAAIAAMAAAAHAP3/AAAIAAMAAAAIAP3/AAAIAAMAAAAJAPz/AAAIAAMAAAAKAPv/AAAIAAMAAAA=")
+tile_map_data = PackedByteArray("AAACAP//AAAIAAMAAAABAAAAAAAIAAMAAAAAAAEAAAAIAAMAAAADAP7/AAAIAAMAAAAEAP7/AAAIAAMAAAAFAP7/AAAIAAMAAAAGAP7/AAAIAAMAAAAFAP//AAAIAAMAAAAEAAAAAAAIAAMAAAADAAEAAAAIAAMAAAACAAEAAAAIAAMAAAABAAEAAAAIAAMAAAACAAAAAAAIAAMAAAADAP//AAAIAAMAAAAEAP//AAAIAAMAAAADAAAAAAAIAAMAAAAHAP7/AAAIAAMAAAAFAAAAAAAIAAMAAAAGAP//AAAIAAMAAAAEAAEAAAAIAAMAAAAFAPz/AAAIAAMAAAAEAP3/AAAIAAMAAAAGAPz/AAAIAAMAAAAFAP3/AAAIAAMAAAAGAP3/AAAIAAMAAAAHAPz/AAAIAAMAAAAIAPz/AAAIAAMAAAAHAP3/AAAIAAMAAAAIAP3/AAAIAAMAAAAJAPz/AAAIAAMAAAAKAPv/AAAIAAMAAAALAPr/AAAIAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 
 [node name="WallLayer" type="TileMapLayer" parent="." unique_id=729939547]
 position = Vector2(1, 1)
-tile_map_data = PackedByteArray("AAAAAP//BQAAAAEAAAAAAAAABQAAAAIAAAAAAAEABQAAAAMAAAACAP3/BQAAAAEAAAACAP7/BQAAAAIAAAACAP//BQAAAAMAAAABAP7/LgAAAAEAAAABAP//LgAAAAIAAAABAAAALgAAAAMAAAAEAP3/XAAWAAIAAAAEAP7/XAAWAAMAAAAFAP3/XAAOAAIAAAAFAP7/XAAOAAMAAAAHAPv/XAACAAIAAAAHAPz/XAACAAMAAAAJAPn/QwAMAAEAAAAJAPr/QwAMAAIAAAAJAPv/QwAMAAMAAAA=")
+tile_map_data = PackedByteArray("AAAEAP3/XAAWAAIAAAAEAP7/XAAWAAMAAAAFAP3/XAAOAAIAAAAFAP7/XAAOAAMAAAAHAPv/XAACAAIAAAAHAPz/XAACAAMAAAAJAPn/QwAMAAEAAAAJAPr/QwAMAAIAAAAJAPv/QwAMAAMAAAABAP7/LgAAAAEAAAABAP//LgAAAAIAAAABAAAALgAAAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
 
 [node name="FloorSwitch" parent="." unique_id=1662818470 instance=ExtResource("7_blb4b")]
 position = Vector2(640, 337)
+door_node = NodePath("../door")
 
 [node name="Crate" parent="." unique_id=2143499831 instance=ExtResource("8_q0ovb")]
-position = Vector2(404, 132)
+position = Vector2(321, 209)
+
+[node name="door" parent="." unique_id=1486743604 instance=ExtResource("9_wvqtl")]
+position = Vector2(1344, 64)
 
 [node name="Player" parent="." unique_id=113525314 instance=ExtResource("3_8q58m")]
-position = Vector2(0, 0)
+position = Vector2(29, 8)
+speed = 150
 
 [node name="StartPosition" type="Node2D" parent="." unique_id=1010738862]
 position = Vector2(254, 125)

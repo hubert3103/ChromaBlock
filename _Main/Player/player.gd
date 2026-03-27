@@ -21,7 +21,6 @@ func _physics_process(delta):
 	var input_vector = Vector2(x, y)
 
 	if input_vector != Vector2.ZERO:
-		# --- Movement ---
 		input_vector = input_vector.normalized()
 		velocity = input_vector * speed
 	else:
@@ -29,15 +28,14 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-	# --- PUSHING (AFTER MOVE) ---
-	if velocity != Vector2.ZERO:
-		for i in get_slide_collision_count():
-			var collision = get_slide_collision(i)
-			var collider = collision.get_collider()
+	# --- NATURAL PUSHING ---
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
 
-			if collider != null and collider.has_method("push"):
-				var push_dir = get_push_direction(velocity)
-				collider.push(push_dir)
+		if collider is CharacterBody2D:
+			var push_dir = -collision.get_normal()
+			collider.velocity = push_dir * speed
 
 	# --- Animation ---
 	if velocity != Vector2.ZERO:
@@ -79,11 +77,3 @@ func _physics_process(delta):
 		$AnimatedSprite2D.animation = "Idle" + last_direction
 		$AnimatedSprite2D.flip_h = false
 		$AnimatedSprite2D.play()
-
-
-# --- 4 DIRECTION PUSH FUNCTION ---
-func get_push_direction(vel: Vector2) -> Vector2:
-	if abs(vel.x) > abs(vel.y):
-		return Vector2(sign(vel.x), 0)
-	else:
-		return Vector2(0, sign(vel.y))

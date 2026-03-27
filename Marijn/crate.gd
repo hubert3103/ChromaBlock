@@ -1,14 +1,11 @@
 extends CharacterBody2D
 
-@export var push_speed = 100
 @export var crate_id: String = "A"
 
-func push(direction: Vector2):
-	if direction == Vector2.ZERO:
-		return
-	
-	velocity = direction.normalized() * push_speed
+func _physics_process(delta):
+	# Slowly stop movement (friction)
+	velocity = velocity.move_toward(Vector2.ZERO, 500 * delta)
 	move_and_slide()
-	
+
 func get_crate_id():
 	return crate_id

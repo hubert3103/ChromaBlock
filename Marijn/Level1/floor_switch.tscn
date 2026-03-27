@@ -3,11 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://cwhjo0d6ah6va" path="res://art/Isometric/switchFloorOff_E.png" id="1_g13by"]
 [ext_resource type="Script" uid="uid://ce15kojxt42w8" path="res://Marijn/Level1/floor_switch.gd" id="1_sn77k"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sn77k"]
+size = Vector2(85, 43)
+
 [node name="FloorSwitch" type="Area2D" unique_id=1662818470]
 script = ExtResource("1_sn77k")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1230461239]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=622962867]
 position = Vector2(1, -177)
 texture = ExtResource("1_g13by")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1230461239]
+position = Vector2(1, 7)
+shape = SubResource("RectangleShape2D_sn77k")

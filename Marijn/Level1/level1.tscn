@@ -411,3 +411,6 @@ position = Vector2(254, 125)
 tile_map_data = PackedByteArray("AAAKAPr/LgAVAAIAAAAKAPv/LgAVAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
+
+[connection signal="body_entered" from="FloorSwitch" to="FloorSwitch" method="_on_body_entered"]
+[connection signal="body_exited" from="FloorSwitch" to="FloorSwitch" method="_on_body_exited"]

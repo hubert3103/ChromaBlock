@@ -8,13 +8,12 @@ size = Vector2(90.50967, 90.509674)
 
 [node name="Crate" type="CharacterBody2D" unique_id=2143499831]
 script = ExtResource("1_rxb5b")
-push_speed = 25
 
 [node name="CrateSprite" type="Sprite2D" parent="." unique_id=437452478]
-position = Vector2(108, -37)
+position = Vector2(0, -145)
 texture = ExtResource("1_vc41l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1592186791]
-position = Vector2(108, 114)
+position = Vector2(1, -2)
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_rxb5b")

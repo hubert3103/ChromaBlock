@@ -2,11 +2,20 @@ extends CharacterBody2D
 
 @export var speed = 100
 
-# Track the last logical direction for idle
-# Can be: "Up", "Down", "Left", "Right", "UpRight", "UpLeft", "DownRight", "DownLeft"
 var last_direction = "Down"
+var can_move = true	
 
 func _physics_process(delta):
+	if not can_move:
+		velocity = Vector2.ZERO
+		move_and_slide()
+	
+		# Show idle animation instead
+		$AnimatedSprite2D.animation = "Idle" + last_direction
+		$AnimatedSprite2D.play()
+	
+		return
+
 	var x = 0
 	var y = 0
 
@@ -23,12 +32,24 @@ func _physics_process(delta):
 	var input_vector = Vector2(x, y)
 
 	if input_vector != Vector2.ZERO:
-		# --- Movement ---
 		input_vector = input_vector.normalized()
 		velocity = input_vector * speed
-		move_and_slide()
+	else:
+		velocity = Vector2.ZERO
 
-		# --- Determine walking animation ---
+	move_and_slide()
+
+	# --- NATURAL PUSHING ---
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+
+		if collider is CharacterBody2D:
+			var push_dir = -collision.get_normal()
+			collider.velocity = push_dir * speed
+
+	# --- Animation ---
+	if velocity != Vector2.ZERO:
 		var anim_name = ""
 		var flip_h = false
 
@@ -36,14 +57,14 @@ func _physics_process(delta):
 			anim_name = "UpRight"
 			last_direction = "UpRight"
 		elif x < 0 and y < 0:
-			anim_name = "UpRight"  # mirrored
+			anim_name = "UpRight"
 			flip_h = true
 			last_direction = "UpLeft"
 		elif x > 0 and y > 0:
 			anim_name = "DownRight"
 			last_direction = "DownRight"
 		elif x < 0 and y > 0:
-			anim_name = "DownRight"  # mirrored
+			anim_name = "DownRight"
 			flip_h = true
 			last_direction = "DownLeft"
 		elif y < 0:
@@ -56,7 +77,7 @@ func _physics_process(delta):
 			anim_name = "Right"
 			last_direction = "Right"
 		elif x < 0:
-			anim_name = "Right"  # mirrored
+			anim_name = "Right"
 			flip_h = true
 			last_direction = "Left"
 
@@ -64,8 +85,6 @@ func _physics_process(delta):
 		$AnimatedSprite2D.flip_h = flip_h
 		$AnimatedSprite2D.play()
 	else:
-		# --- Idle animation based on last logical direction ---
-		velocity = Vector2.ZERO
 		$AnimatedSprite2D.animation = "Idle" + last_direction
-		$AnimatedSprite2D.flip_h = false  # idle sprites already exist for left
+		$AnimatedSprite2D.flip_h = false
 		$AnimatedSprite2D.play()

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://k2gj1cdfkcae" path="res://art/Tilesheet/block_tilesheet.png" id="5_h3b0q"]
 [ext_resource type="Texture2D" uid="uid://bagaenui0u2ni" path="res://art/Tilesheet/stair_tilesheet.png" id="6_aygnb"]
 [ext_resource type="PackedScene" uid="uid://c41ywpnm7v6fu" path="res://_Main/Player/player.tscn" id="7_5cri7"]
+[ext_resource type="PackedScene" uid="uid://by72dlxhlmjlc" path="res://hubert/switch.tscn" id="8_3fu2t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vpdkp"]
 texture = ExtResource("2_4yxp0")
@@ -392,9 +393,6 @@ tile_map_data = PackedByteArray("AAAAAP//BQAAAAEAAAAAAAAABQAAAAIAAAAAAAEABQAAAAM
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
 
-[node name="Player" parent="." unique_id=113525314 instance=ExtResource("7_5cri7")]
-position = Vector2(0, 0)
-
 [node name="StartPosition" type="Node2D" parent="." unique_id=1010738862]
 position = Vector2(254, 125)
 
@@ -402,3 +400,10 @@ position = Vector2(254, 125)
 tile_map_data = PackedByteArray("AAAKAPr/LgAVAAIAAAAKAPv/LgAVAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
+
+[node name="Switch" parent="." unique_id=796593066 instance=ExtResource("8_3fu2t")]
+position = Vector2(230, -99)
+
+[node name="Player" parent="." unique_id=113525314 instance=ExtResource("7_5cri7")]
+position = Vector2(-178, 45)
+speed = 150

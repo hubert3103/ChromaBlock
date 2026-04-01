@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://t75xcadrkxgr"]
+
+[node name="HUD" type="CanvasLayer" unique_id=735243495]
+
+[node name="Level complete" type="Label" parent="." unique_id=1778777178]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -342.5
+offset_top = -100.0
+offset_right = 342.5
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 64
+text = "LEVEL COMPLETE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NextLevelButton" type="Button" parent="." unique_id=1308152749]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.0
+offset_top = 62.0
+offset_right = 169.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Next Level"

@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://by72dlxhlmjlc"]
 
 [ext_resource type="Texture2D" uid="uid://cbqdkqqn1ji87" path="res://art/Isometric/switchWallOn_E.png" id="1_7x1xb"]
+[ext_resource type="Script" uid="uid://y6maj44f5cwt" path="res://hubert/switch.gd" id="1_x7lr5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x1xb"]
 size = Vector2(43, 65)
 
 [node name="Switch" type="Node2D" unique_id=796593066]
+script = ExtResource("1_x7lr5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1685217969]
 position = Vector2(218, 136)

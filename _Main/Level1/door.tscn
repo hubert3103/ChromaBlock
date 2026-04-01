@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bx66tuty2v77e"]
 
-[ext_resource type="Script" uid="uid://duwjbmlnd6v0a" path="res://Marijn/Level1/door.gd" id="1_1f6x6"]
+[ext_resource type="Script" uid="uid://duwjbmlnd6v0a" path="res://_Main/Level1/door.gd" id="1_1f6x6"]
 [ext_resource type="Texture2D" uid="uid://yqmcr8vorfgk" path="res://art/Isometric/wall_N.png" id="2_skse0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o43b0"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ceninen4wl1vr"]
 
-[ext_resource type="Script" uid="uid://duacwllpnsbu4" path="res://Marijn/Level1/crate.gd" id="1_rxb5b"]
+[ext_resource type="Script" uid="uid://duacwllpnsbu4" path="res://_Main/Level1/crate.gd" id="1_rxb5b"]
 [ext_resource type="Texture2D" uid="uid://bgfmx3lamubgk" path="res://art/Isometric/crate_E.png" id="1_vc41l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxb5b"]

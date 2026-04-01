@@ -3,8 +3,19 @@ extends CharacterBody2D
 @export var speed = 100
 
 var last_direction = "Down"
+var can_move = true	
 
 func _physics_process(delta):
+	if not can_move:
+		velocity = Vector2.ZERO
+		move_and_slide()
+	
+		# Show idle animation instead
+		$AnimatedSprite2D.animation = "Idle" + last_direction
+		$AnimatedSprite2D.play()
+	
+		return
+
 	var x = 0
 	var y = 0
 

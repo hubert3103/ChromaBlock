@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bx66tuty2v77e" path="res://_Main/Level1/door.tscn" id="9_wvqtl"]
 [ext_resource type="Script" uid="uid://dxwglyyccnpt0" path="res://_Main/Level1/level_end_trigger.gd" id="11_ch3wh"]
 [ext_resource type="PackedScene" uid="uid://t75xcadrkxgr" path="res://_Main/Level1/hud.tscn" id="12_dxddx"]
+[ext_resource type="FontFile" uid="uid://ylgw03k7bb5x" path="res://art/Fonts/3DIsometric-Bold.otf" id="13_45eu4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vpdkp"]
 texture = ExtResource("1_vpdkp")
@@ -397,7 +398,7 @@ offset_bottom = 389.0
 color = Color(0.8627451, 0.7254902, 0.58431375, 1)
 
 [node name="FloorLayer" type="TileMapLayer" parent="." unique_id=192260591]
-tile_map_data = PackedByteArray("AAACAP//AAAIAAMAAAABAAAAAAAIAAMAAAAAAAEAAAAIAAMAAAADAP7/AAAIAAMAAAAEAP7/AAAIAAMAAAAFAP7/AAAIAAMAAAAGAP7/AAAIAAMAAAAFAP//AAAIAAMAAAAEAAAAAAAIAAMAAAADAAEAAAAIAAMAAAACAAEAAAAIAAMAAAABAAEAAAAIAAMAAAACAAAAAAAIAAMAAAADAP//AAAIAAMAAAAEAP//AAAIAAMAAAADAAAAAAAIAAMAAAAHAP7/AAAIAAMAAAAFAAAAAAAIAAMAAAAGAP//AAAIAAMAAAAEAAEAAAAIAAMAAAAFAPz/AAAIAAMAAAAEAP3/AAAIAAMAAAAGAPz/AAAIAAMAAAAFAP3/AAAIAAMAAAAGAP3/AAAIAAMAAAAHAPz/AAAIAAMAAAAIAPz/AAAIAAMAAAAHAP3/AAAIAAMAAAAIAP3/AAAIAAMAAAAJAPz/AAAIAAMAAAAKAPv/AAAIAAMAAAALAPr/AAAIAAMAAAD//wEAAAAIAAMAAAAAAAAAAAAIAAMAAAABAP//AAAIAAMAAAACAP7/AAAIAAMAAAADAP3/AAAIAAMAAAAEAPz/AAAIAAMAAAAMAPn/AAAIAAMAAAANAPj/AAAIAAMAAAAOAPf/AAAIAAMAAAAPAPb/AAAIAAMAAAA=")
+tile_map_data = PackedByteArray("AAACAP//AAAIAAMAAAABAAAAAAAIAAMAAAAAAAEAAAAIAAMAAAADAP7/AAAIAAMAAAAEAP7/AAAIAAMAAAAFAP7/AAAIAAMAAAAGAP7/AAAIAAMAAAAFAP//AAAIAAMAAAAEAAAAAAAIAAMAAAADAAEAAAAIAAMAAAACAAEAAAAIAAMAAAABAAEAAAAIAAMAAAACAAAAAAAIAAMAAAADAP//AAAIAAMAAAAEAP//AAAIAAMAAAADAAAAAAAIAAMAAAAHAP7/AAAIAAMAAAAFAAAAAAAIAAMAAAAGAP//AAAIAAMAAAAEAAEAAAAIAAMAAAAFAPz/AAAIAAMAAAAEAP3/AAAIAAMAAAAGAPz/AAAIAAMAAAAFAP3/AAAIAAMAAAAGAP3/AAAIAAMAAAAHAPz/AAAIAAMAAAAIAPz/AAAIAAMAAAAHAP3/AAAIAAMAAAAIAP3/AAAIAAMAAAAJAPz/AAAIAAMAAAAKAPv/AAAIAAMAAAALAPr/AAAIAAMAAAD//wEAAAAIAAMAAAAAAAAAAAAIAAMAAAABAP//AAAIAAMAAAACAP7/AAAIAAMAAAADAP3/AAAIAAMAAAAEAPz/AAAIAAMAAAAMAPn/AAAIAAMAAAANAPj/AAAIAAMAAAAOAPf/AAAIAAMAAAAPAPb/AAAIAAMAAAAQAPX/AAAIAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 
 [node name="WallLayerRight" type="TileMapLayer" parent="." unique_id=729939547]
@@ -426,7 +427,7 @@ position = Vector2(1344, 64)
 position = Vector2(108, 51)
 
 [node name="LevelEndTrigger" type="Area2D" parent="." unique_id=436667344]
-position = Vector2(1537, -1)
+position = Vector2(1666, -64)
 script = ExtResource("11_ch3wh")
 metadata/_edit_group_ = true
 
@@ -445,6 +446,42 @@ occlusion_enabled = false
 
 [node name="LevelEndHUD" parent="." unique_id=735243495 instance=ExtResource("12_dxddx")]
 visible = false
+
+[node name="StartHUD" type="CanvasLayer" parent="." unique_id=1072499108]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="StartHUD" unique_id=1289906807]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = 246.0
+offset_right = 13.0
+offset_bottom = -253.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.73333335)
+
+[node name="Level complete" type="Label" parent="StartHUD" unique_id=498861964]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -342.5
+offset_top = -100.0
+offset_right = 342.5
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("13_45eu4")
+theme_override_font_sizes/font_size = 64
+text = "Level 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="body_entered" from="FloorSwitch" to="FloorSwitch" method="_on_body_entered"]
 [connection signal="body_exited" from="FloorSwitch" to="FloorSwitch" method="_on_body_exited"]

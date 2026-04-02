@@ -2,12 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://cbqdkqqn1ji87" path="res://art/Isometric/switchWallOn_E.png" id="1_7x1xb"]
 [ext_resource type="Script" uid="uid://y6maj44f5cwt" path="res://hubert/switch.gd" id="1_x7lr5"]
+[ext_resource type="Texture2D" uid="uid://kunh7viol3b5" path="res://art/Isometric/switchWallOff_E.png" id="3_ohpec"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x1xb"]
-size = Vector2(43, 65)
+size = Vector2(106, 110)
 
 [node name="Switch" type="Node2D" unique_id=796593066]
 script = ExtResource("1_x7lr5")
+unpressed_texture = ExtResource("1_7x1xb")
+pressed_texture = ExtResource("3_ohpec")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1685217969]
 position = Vector2(218, 136)
@@ -16,7 +19,8 @@ texture = ExtResource("1_7x1xb")
 [node name="Area2D" type="Area2D" parent="." unique_id=1786742840]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=557197240]
-position = Vector2(193.5, 239.5)
+position = Vector2(194, 241)
 shape = SubResource("RectangleShape2D_7x1xb")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=78404050]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

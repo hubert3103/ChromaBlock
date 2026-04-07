@@ -13,7 +13,6 @@ func _physics_process(delta):
 		# Show idle animation instead
 		$AnimatedSprite2D.animation = "Idle" + last_direction
 		$AnimatedSprite2D.play()
-	
 		return
 
 	var x = 0

@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 100
+@export var diagonal_angle := 26.565 # tweak this (20–30 works well)
 
 var last_direction = "Down"
 var can_move = true	
@@ -9,8 +10,7 @@ func _physics_process(delta):
 	if not can_move:
 		velocity = Vector2.ZERO
 		move_and_slide()
-	
-		# Show idle animation instead
+		
 		$AnimatedSprite2D.animation = "Idle" + last_direction
 		$AnimatedSprite2D.play()
 		return
@@ -32,6 +32,20 @@ func _physics_process(delta):
 
 	if input_vector != Vector2.ZERO:
 		input_vector = input_vector.normalized()
+
+		# --- ONLY FIX DIAGONALS ---
+		if x != 0 and y != 0:
+			var angle = deg_to_rad(diagonal_angle)
+
+			# Preserve direction but skew it
+			var sign_x = sign(x)
+			var sign_y = sign(y)
+
+			input_vector.x = cos(angle) * sign_x
+			input_vector.y = sin(angle) * sign_y
+
+			input_vector = input_vector.normalized()
+
 		velocity = input_vector * speed
 	else:
 		velocity = Vector2.ZERO

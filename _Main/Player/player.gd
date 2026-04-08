@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 100
-@export var diagonal_angle := 26.565 # tweak this (20–30 works well)
+@export var diagonal_angle := 26.565
 
 var last_direction = "Down"
 var can_move = true	
@@ -15,38 +15,36 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play()
 		return
 
-	var x = 0
-	var y = 0
+	var move_vector = Vector2.ZERO
 
-	# --- Input ---
-	if Input.is_action_pressed("move_right"):
-		x += 1
-	if Input.is_action_pressed("move_left"):
-		x -= 1
-	if Input.is_action_pressed("move_down"):
-		y += 1
-	if Input.is_action_pressed("move_up"):
-		y -= 1
+	var up = Input.is_action_pressed("move_up")
+	var down = Input.is_action_pressed("move_down")
+	var left = Input.is_action_pressed("move_left")
+	var right = Input.is_action_pressed("move_right")
 
-	var input_vector = Vector2(x, y)
+	# --- REQUIRE 2 KEYS FOR MOVEMENT ---
+	if up and right:
+		move_vector = Vector2(1, -1)   # UpRight
+	elif up and left:
+		move_vector = Vector2(-1, -1)  # UpLeft
+	elif down and right:
+		move_vector = Vector2(1, 1)    # DownRight
+	elif down and left:
+		move_vector = Vector2(-1, 1)   # DownLeft
 
-	if input_vector != Vector2.ZERO:
-		input_vector = input_vector.normalized()
+	if move_vector != Vector2.ZERO:
+		move_vector = move_vector.normalized()
 
-		# --- ONLY FIX DIAGONALS ---
-		if x != 0 and y != 0:
-			var angle = deg_to_rad(diagonal_angle)
+		# Apply angle tuning
+		var angle = deg_to_rad(diagonal_angle)
+		var sign_x = sign(move_vector.x)
+		var sign_y = sign(move_vector.y)
 
-			# Preserve direction but skew it
-			var sign_x = sign(x)
-			var sign_y = sign(y)
+		move_vector.x = cos(angle) * sign_x
+		move_vector.y = sin(angle) * sign_y
+		move_vector = move_vector.normalized()
 
-			input_vector.x = cos(angle) * sign_x
-			input_vector.y = sin(angle) * sign_y
-
-			input_vector = input_vector.normalized()
-
-		velocity = input_vector * speed
+		velocity = move_vector * speed
 	else:
 		velocity = Vector2.ZERO
 
@@ -66,33 +64,20 @@ func _physics_process(delta):
 		var anim_name = ""
 		var flip_h = false
 
-		if x > 0 and y < 0:
+		if move_vector.x > 0 and move_vector.y < 0:
 			anim_name = "UpRight"
 			last_direction = "UpRight"
-		elif x < 0 and y < 0:
+		elif move_vector.x < 0 and move_vector.y < 0:
 			anim_name = "UpRight"
 			flip_h = true
 			last_direction = "UpLeft"
-		elif x > 0 and y > 0:
+		elif move_vector.x > 0 and move_vector.y > 0:
 			anim_name = "DownRight"
 			last_direction = "DownRight"
-		elif x < 0 and y > 0:
+		elif move_vector.x < 0 and move_vector.y > 0:
 			anim_name = "DownRight"
 			flip_h = true
 			last_direction = "DownLeft"
-		elif y < 0:
-			anim_name = "Up"
-			last_direction = "Up"
-		elif y > 0:
-			anim_name = "Down"
-			last_direction = "Down"
-		elif x > 0:
-			anim_name = "Right"
-			last_direction = "Right"
-		elif x < 0:
-			anim_name = "Right"
-			flip_h = true
-			last_direction = "Left"
 
 		$AnimatedSprite2D.animation = anim_name
 		$AnimatedSprite2D.flip_h = flip_h

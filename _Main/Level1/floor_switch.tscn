@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bgejemm26xufc" path="res://art/Isometric/switchFloorOn_E.png" id="3_0ciu0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sn77k"]
-size = Vector2(85, 43)
+size = Vector2(40, 34)
 
 [node name="FloorSwitch" type="Area2D" unique_id=1662818470]
 script = ExtResource("1_sn77k")
@@ -17,5 +17,5 @@ position = Vector2(1, -177)
 texture = ExtResource("1_g13by")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1230461239]
-position = Vector2(1, 7)
+position = Vector2(1, 5)
 shape = SubResource("RectangleShape2D_sn77k")

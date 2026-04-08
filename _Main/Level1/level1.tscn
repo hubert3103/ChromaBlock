@@ -46,8 +46,11 @@ texture_region_size = Vector2i(256, 128)
 texture = ExtResource("3_tmoik")
 texture_region_size = Vector2i(256, 128)
 0:1/0 = 0
+0:1/0/y_sort_origin = 162
 0:2/0 = 0
+0:2/0/y_sort_origin = 97
 0:3/0 = 0
+0:3/0/y_sort_origin = 32
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128.30876, -63.69173, -128, 0, -96.47826, 15.760872, -63.845947, -0.15421295, -64.15438, -16.501247, -16.03859, -40.559143, 0.30844116, -32.231407, 31.707016, -48.146492, 31.768768, -64.3086)
 1:2/0 = 0
 1:3/0 = 0
@@ -157,11 +160,13 @@ texture_region_size = Vector2i(256, 128)
 texture = ExtResource("2_c2y7v")
 texture_region_size = Vector2i(256, 128)
 0:1/0 = 0
+0:1/0/y_sort_origin = 162
 2:1/0 = 0
 4:1/0 = 0
 6:1/0 = 0
 7:1/0 = 0
 0:2/0 = 0
+0:2/0/y_sort_origin = 97
 0:2/0/terrain_set = 0
 1:2/0 = 0
 1:2/0/terrain_set = 0
@@ -222,6 +227,7 @@ texture_region_size = Vector2i(256, 128)
 7:2/0 = 0
 7:2/0/terrain_set = 0
 0:3/0 = 0
+0:3/0/y_sort_origin = 32
 0:3/0/terrain_set = 0
 0:3/0/terrain = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128.08957, -64.36341, -128, 0, -95.902695, 16.048655, 31.987991, -48.006004, 31.989079, -63.929016)
@@ -292,12 +298,18 @@ texture_region_size = Vector2i(256, 128)
 10:3/0 = 0
 11:3/0 = 0
 12:1/0 = 0
+12:1/0/y_sort_origin = 162
 12:2/0 = 0
+12:2/0/y_sort_origin = 97
 12:3/0 = 0
+12:3/0/y_sort_origin = 32
 12:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128.74402, -65.34, -128, 0, 0, 64, 128, 0, 128.74402, -64.371994)
 13:1/0 = 0
+13:1/0/y_sort_origin = 162
 13:2/0 = 0
+13:2/0/y_sort_origin = 97
 13:3/0 = 0
+13:3/0/y_sort_origin = 32
 14:1/0 = 0
 14:2/0 = 0
 14:3/0 = 0
@@ -346,7 +358,9 @@ texture_region_size = Vector2i(256, 128)
 12:3/0 = 0
 13:3/0 = 0
 14:2/0 = 0
+14:2/0/z_index = 97
 14:3/0 = 0
+14:3/0/y_sort_origin = 32
 15:2/0 = 0
 15:3/0 = 0
 16:2/0 = 0
@@ -358,11 +372,15 @@ texture_region_size = Vector2i(256, 128)
 19:2/0 = 0
 19:3/0 = 0
 20:2/0 = 0
+20:2/0/z_index = 97
 20:3/0 = 0
+20:3/0/y_sort_origin = 32
 21:2/0 = 0
 21:3/0 = 0
 22:2/0 = 0
+22:2/0/y_sort_origin = 97
 22:3/0 = 0
+22:3/0/y_sort_origin = 32
 23:2/0 = 0
 23:3/0 = 0
 
@@ -403,15 +421,29 @@ tile_set = SubResource("TileSet_c2y7v")
 
 [node name="WallLayerRight" type="TileMapLayer" parent="." unique_id=729939547]
 position = Vector2(1, 0)
-tile_map_data = PackedByteArray("AAAEAP3/XAAWAAIAAAAEAP7/XAAWAAMAAAAHAPv/XAACAAIAAAAHAPz/XAACAAMAAAAJAPn/QwAMAAEAAAAJAPr/QwAMAAIAAAAJAPv/QwAMAAMAAAADAP3/XAAWAAIAAAADAP7/XAAWAAMAAAACAP3/QwAMAAIAAAACAP7/QwAMAAMAAAACAPz/QwAMAAEAAAAFAP3/XAAOAAIAAAAFAP7/XAAOAAMAAAA=")
+tile_map_data = PackedByteArray("AAAHAPr/BQABAAIAAAAHAPv/BQABAAMAAAAGAPr/BQABAAIAAAAGAPv/BQABAAMAAAAFAPr/BQABAAIAAAAFAPv/BQABAAMAAAAJAPn/QwAMAAEAAAAJAPr/QwAMAAIAAAAJAPv/QwAMAAMAAAAIAPn/QwAMAAEAAAAIAPr/QwAMAAIAAAAIAPv/QwAMAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
 
 [node name="WallLayerLeft" type="TileMapLayer" parent="." unique_id=886997980]
+y_sort_enabled = true
 position = Vector2(2, 0)
-tile_map_data = PackedByteArray("AAABAP3/BQAAAAEAAAABAP7/BQAAAAIAAAABAP//BQAAAAMAAAAAAP7/LgAAAAEAAAAAAP//LgAAAAIAAAAAAAAALgAAAAMAAAD/////BQAAAAEAAAD//wAABQAAAAIAAAD//wEABQAAAAMAAAA=")
+tile_map_data = PackedByteArray("AAABAP3/BQAAAAEAAAABAP7/BQAAAAIAAAABAP//BQAAAAMAAAAAAP7/LgAAAAEAAAAAAP//LgAAAAIAAAAAAAAALgAAAAMAAAD/////BQAAAAEAAAD//wAABQAAAAIAAAD//wEABQAAAAMAAAACAPz/BQAAAAEAAAACAP3/BQAAAAIAAAACAP7/BQAAAAMAAAADAPv/QwAMAAEAAAADAPz/QwAMAAIAAAADAP3/QwAMAAMAAAAEAPr/QwAMAAEAAAAEAPv/QwAMAAIAAAAEAPz/QwAMAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
+y_sort_origin = 1
+
+[node name="StairsLayer" type="TileMapLayer" parent="." unique_id=591240380]
+y_sort_enabled = true
+position = Vector2(4, 0)
+tile_map_data = PackedByteArray("AAADAP3/XAAWAAIAAAADAP7/XAAWAAMAAAAEAP3/XAAWAAIAAAAEAP7/XAAWAAMAAAAFAP3/XAAOAAIAAAAFAP7/XAAOAAMAAAAGAPz/XAAUAAIAAAAGAP3/XAAUAAMAAAAHAPv/XAAUAAIAAAAHAPz/XAAUAAMAAAA=")
+tile_set = SubResource("TileSet_c2y7v")
+occlusion_enabled = false
+y_sort_origin = 1
+
+[node name="FloorLayer2" type="TileMapLayer" parent="." unique_id=1963412918]
+tile_map_data = PackedByteArray("AAAFAPz/AAAIAAMAAAAGAPv/AAABAAMAAAAEAPz/AAADAAMAAAAFAPv/AAAFAAMAAAAEAP3/AAACAAMAAAAGAPz/AAAAAAMAAAAFAP3/AAAGAAMAAAAHAPv/AAAEAAMAAAADAP3/AAAHAAMAAAA=")
+tile_set = SubResource("TileSet_c2y7v")
 
 [node name="FloorSwitch" parent="." unique_id=1662818470 instance=ExtResource("7_blb4b")]
 position = Vector2(640, 337)

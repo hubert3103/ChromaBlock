@@ -57,7 +57,8 @@ func _physics_process(delta):
 
 		if collider is CharacterBody2D:
 			var push_dir = -collision.get_normal()
-			collider.velocity = push_dir * speed
+			if collider is CharacterBody2D and collider.has_method("push"):
+				collider.push(-collision.get_normal())
 
 	# --- Animation ---
 	if velocity != Vector2.ZERO:

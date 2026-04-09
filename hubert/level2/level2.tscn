@@ -390,26 +390,26 @@ tile_map_data = PackedByteArray("AAACAP//AAAIAAMAAAABAAAAAAAIAAMAAAAAAAEAAAAIAAM
 tile_set = SubResource("TileSet_c2y7v")
 
 [node name="WallLayer" type="TileMapLayer" parent="." unique_id=729939547]
-tile_map_data = PackedByteArray("AAAAAP//BQAAAAEAAAAAAAAABQAAAAIAAAAAAAEABQAAAAMAAAACAP3/BQAAAAEAAAACAP7/BQAAAAIAAAACAP//BQAAAAMAAAABAP7/LgAAAAEAAAABAP//LgAAAAIAAAABAAAALgAAAAMAAAAEAP3/XAAWAAIAAAAEAP7/XAAWAAMAAAAFAP3/XAAOAAIAAAAFAP7/XAAOAAMAAAAHAPv/XAACAAIAAAAHAPz/XAACAAMAAAAJAPn/QwAMAAEAAAAJAPr/QwAMAAIAAAAJAPv/QwAMAAMAAAAGAPn/BQAAAAEAAAAGAPr/BQAAAAIAAAAGAPv/BQAAAAMAAAAFAPr/BQAAAAEAAAAFAPv/BQAAAAIAAAAFAPz/BQAAAAMAAAA=")
+tile_map_data = PackedByteArray("AAAAAP//BQAAAAEAAAAAAAAABQAAAAIAAAAAAAEABQAAAAMAAAACAP7/BQAAAAIAAAACAP//BQAAAAMAAAABAP//LgAAAAIAAAABAAAALgAAAAMAAAAEAP3/XAAWAAIAAAAEAP7/XAAWAAMAAAAFAP3/XAAOAAIAAAAFAP7/XAAOAAMAAAAHAPv/XAACAAIAAAAHAPz/XAACAAMAAAAJAPn/QwAMAAEAAAAJAPr/QwAMAAIAAAAJAPv/QwAMAAMAAAAGAPn/BQAAAAEAAAAGAPr/BQAAAAIAAAAGAPv/BQAAAAMAAAAFAPr/BQAAAAEAAAAFAPv/BQAAAAIAAAAFAPz/BQAAAAMAAAACAP3/BQAAAAEAAAABAP7/LgAAAAEAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
 
 [node name="Switch" parent="WallLayer" unique_id=796593066 instance=ExtResource("8_3fu2t")]
 z_index = 10
-position = Vector2(191, -277)
+position = Vector2(288, -66)
 door_node = NodePath("../../door")
 
 [node name="StartPosition" type="Node2D" parent="." unique_id=1010738862]
 position = Vector2(254, 125)
 
+[node name="Player" parent="." unique_id=113525314 instance=ExtResource("7_5cri7")]
+position = Vector2(-178, 45)
+speed = 150
+
 [node name="TopLayer" type="TileMapLayer" parent="." unique_id=862732334]
 tile_map_data = PackedByteArray("AAAKAPr/LgAVAAIAAAAKAPv/LgAVAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
-
-[node name="Player" parent="." unique_id=113525314 instance=ExtResource("7_5cri7")]
-position = Vector2(-178, 45)
-speed = 150
 
 [node name="door" parent="." unique_id=1486743604 instance=ExtResource("9_3ywgy")]
 position = Vector2(1344, 64)

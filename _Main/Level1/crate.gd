@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var crate_id: String = "A"
 @export var diagonal_angle := 26.565
-@export var push_strength := 150
+@export var push_strength := 375
 
 var can_be_pushed := true
 
@@ -26,7 +26,7 @@ func _physics_process(delta):
 			velocity = Vector2.ZERO
 
 	# --- FRICTION ---
-	velocity = velocity.move_toward(Vector2.ZERO, 150 * delta)
+	velocity = velocity.move_toward(Vector2.ZERO, 500 * delta)
 
 	move_and_slide()
 

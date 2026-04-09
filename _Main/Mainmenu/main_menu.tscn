@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://b1d002fbm1suj"]
+
+[ext_resource type="Texture2D" uid="uid://b7sddtdutr7t3" path="res://art/mainmenu.png" id="1_6gwvm"]
+[ext_resource type="Script" uid="uid://pq2x4lw8ixiq" path="res://_Main/Mainmenu/main_menu.gd" id="1_hvlyx"]
+[ext_resource type="FontFile" uid="uid://ylgw03k7bb5x" path="res://art/Fonts/3DIsometric-Bold.otf" id="3_hvlyx"]
+
+[sub_resource type="FontVariation" id="FontVariation_7vl2x"]
+base_font = ExtResource("3_hvlyx")
+variation_transform = Transform2D(1, 0, 0, 1.5, 0, 0)
+spacing_glyph = -15
+
+[node name="MainMenu" type="Control" unique_id=2045756912]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hvlyx")
+
+[node name="Background" type="TextureRect" parent="." unique_id=985777632]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -557.0
+offset_top = -305.0
+offset_right = 561.0
+offset_bottom = 308.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_6gwvm")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=72327531]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -560.0
+offset_top = -307.0
+offset_right = 564.0
+offset_bottom = 312.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.73333335)
+
+[node name="Title" type="Label" parent="." unique_id=426964571]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -361.0
+offset_top = -307.0
+offset_right = 384.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/paragraph_spacing = 1
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = SubResource("FontVariation_7vl2x")
+theme_override_font_sizes/font_size = 125
+text = "CHROMABLOCK"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="StartButton" type="Button" parent="." unique_id=564927678]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -136.0
+offset_top = 88.0
+offset_right = 137.0
+offset_bottom = 145.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.7490196)
+theme_override_font_sizes/font_size = 35
+text = "START"
+
+[node name="HowToPlayButton" type="Button" parent="." unique_id=503091921]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -135.5
+offset_top = 150.0
+offset_right = 137.5
+offset_bottom = 207.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.7490196)
+theme_override_font_sizes/font_size = 35
+text = "HOW TO PLAY
+"
+
+[node name="ExitButton" type="Button" parent="." unique_id=1309430555]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = 191.0
+offset_right = 138.0
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.7490196)
+theme_override_font_sizes/font_size = 35
+text = "EXIT
+
+"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

@@ -1,6 +1,14 @@
 extends CharacterBody2D
 
 @export var speed = 100
+@onready var footstep_player = $FootstepPlayer
+
+@export var footstep_1: AudioStream
+@export var footstep_2: AudioStream
+
+var step_toggle = false
+var step_timer = 0.0
+@export var step_interval = 0.3
 
 var last_direction = "Down"
 var can_move = true	
@@ -87,3 +95,20 @@ func _physics_process(delta):
 		$AnimatedSprite2D.animation = "Idle" + last_direction
 		$AnimatedSprite2D.flip_h = false
 		$AnimatedSprite2D.play()
+	
+	# --- FOOTSTEPS ---
+	if velocity != Vector2.ZERO:
+		step_timer -= delta
+	
+		if step_timer <= 0:
+			step_timer = step_interval
+		
+			if step_toggle:
+				footstep_player.stream = footstep_1
+			else:
+				footstep_player.stream = footstep_2
+		
+			footstep_player.play()
+			step_toggle = !step_toggle
+	else:
+		step_timer = 0.0

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://duacwllpnsbu4" path="res://_Main/Level1/crate.gd" id="1_rxb5b"]
 [ext_resource type="Texture2D" uid="uid://bgfmx3lamubgk" path="res://art/Isometric/crate_E.png" id="1_vc41l"]
+[ext_resource type="AudioStream" uid="uid://dgxlkyynlfhfp" path="res://art/soundEffects/freesound_community-stone-push-37412.mp3" id="3_54s8m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxb5b"]
 size = Vector2(90.50967, 90.509674)
@@ -17,3 +18,6 @@ texture = ExtResource("1_vc41l")
 position = Vector2(1, -2)
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_rxb5b")
+
+[node name="PushSound" type="AudioStreamPlayer2D" parent="." unique_id=1247803083]
+stream = ExtResource("3_54s8m")

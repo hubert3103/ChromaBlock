@@ -1,5 +1,9 @@
 extends Node2D
 
+@onready var switch_sound = $SwitchSound
+
+@export var sound_on: AudioStream
+@export var sound_off: AudioStream
 @export var unpressed_texture: Texture
 @export var pressed_texture: Texture
 @export var door_node: NodePath  
@@ -30,12 +34,22 @@ func activate():
 		var door = get_node(door_node)
 		if door:
 			door.call_deferred("open")
+	
+	# Play ON sound
+	if sound_on:
+		switch_sound.stream = sound_on
+		switch_sound.play()
 
 func deactivate():
 	print("Switch OFF")
 	
 	if $Sprite2D:
 		$Sprite2D.texture = unpressed_texture
+	
+	# 🔊 Play OFF sound
+	if sound_off:
+		switch_sound.stream = sound_off
+		switch_sound.play()
 	
 	if door_node:
 		var door = get_node(door_node)

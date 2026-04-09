@@ -1,5 +1,8 @@
 extends Area2D
 
+@onready var switch_sound = $FloorswitchSound
+
+@export var switch_sfx: AudioStream
 @export var required_id: String = "A"
 @export var unpressed_texture: Texture
 @export var pressed_texture: Texture
@@ -22,6 +25,11 @@ func activate():
 	if $Sprite2D:
 		$Sprite2D.texture = pressed_texture
 	
+	# Play sound
+	if switch_sfx:
+		switch_sound.stream = switch_sfx
+		switch_sound.play()
+	
 	if door_node:
 		var door = get_node(door_node)
 		if door:
@@ -31,6 +39,11 @@ func deactivate():
 	print("Switch OFF")
 	if $Sprite2D:
 		$Sprite2D.texture = unpressed_texture
+	
+	# Play sound again
+	if switch_sfx:
+		switch_sound.stream = switch_sfx
+		switch_sound.play()
 	
 	if door_node:
 		var door = get_node(door_node)

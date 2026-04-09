@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cc2vctytxb1y" path="res://art/Tilesheet/other_tilesheet.png" id="7_qsw03"]
 [ext_resource type="PackedScene" uid="uid://ceninen4wl1vr" path="res://_Main/Level1/crate.tscn" id="8_q0ovb"]
 [ext_resource type="PackedScene" uid="uid://bx66tuty2v77e" path="res://_Main/Level1/door.tscn" id="9_wvqtl"]
+[ext_resource type="AudioStream" uid="uid://dcx0ki3h6moim" path="res://art/soundEffects/floraphonic-analog-appliance-button-7-185282.mp3" id="10_kne48"]
 [ext_resource type="Script" uid="uid://dxwglyyccnpt0" path="res://_Main/Level1/level_end_trigger.gd" id="11_ch3wh"]
 [ext_resource type="PackedScene" uid="uid://t75xcadrkxgr" path="res://_Main/Level1/hud.tscn" id="12_dxddx"]
 [ext_resource type="FontFile" uid="uid://ylgw03k7bb5x" path="res://art/Fonts/3DIsometric-Bold.otf" id="13_45eu4"]
@@ -571,6 +572,7 @@ y_sort_origin = 1
 
 [node name="FloorSwitch" parent="." unique_id=1662818470 instance=ExtResource("7_blb4b")]
 position = Vector2(1022, -303)
+switch_sfx = ExtResource("10_kne48")
 door_node = NodePath("../door")
 
 [node name="Crate" parent="." unique_id=2143499831 instance=ExtResource("8_q0ovb")]

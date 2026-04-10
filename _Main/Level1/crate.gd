@@ -9,6 +9,7 @@ extends CharacterBody2D
 var is_moving := false
 var start_position := Vector2.ZERO
 var target_position := Vector2.ZERO
+@onready var push_sound = $PushSound
 
 func _physics_process(delta):
 	if is_moving:
@@ -20,6 +21,14 @@ func _physics_process(delta):
 		else:
 			var movement = direction.normalized() * move_speed * delta
 			move_and_collide(movement)
+		
+			# --- PUSH SOUND ---
+	if velocity.length() > 5:
+		if not push_sound.playing:
+			push_sound.play()
+	else:
+		if push_sound.playing:
+			push_sound.stop()
 
 func push(direction: Vector2):
 	if is_moving:

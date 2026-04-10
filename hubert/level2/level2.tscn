@@ -159,6 +159,7 @@ texture_region_size = Vector2i(256, 128)
 2:1/0 = 0
 4:1/0 = 0
 6:1/0 = 0
+6:1/0/y_sort_origin = 162
 7:1/0 = 0
 0:2/0 = 0
 0:2/0/y_sort_origin = 97
@@ -198,6 +199,7 @@ texture_region_size = Vector2i(256, 128)
 4:2/0/terrains_peering_bit/top_corner = 0
 4:2/0/terrains_peering_bit/top_right_side = 0
 5:2/0 = 0
+5:2/0/y_sort_origin = 97
 5:2/0/terrain_set = 0
 5:2/0/terrain = 0
 5:2/0/terrains_peering_bit/right_corner = 0
@@ -209,6 +211,7 @@ texture_region_size = Vector2i(256, 128)
 5:2/0/terrains_peering_bit/top_corner = 0
 5:2/0/terrains_peering_bit/top_right_side = 0
 6:2/0 = 0
+6:2/0/y_sort_origin = 97
 6:2/0/terrain_set = 0
 6:2/0/terrain = 0
 6:2/0/terrains_peering_bit/right_corner = 0
@@ -256,9 +259,11 @@ texture_region_size = Vector2i(256, 128)
 4:3/0/terrain_set = 0
 4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(31.691833, -65.02287, -127.86011, -63.930054, -128, 0, 0, 64, 31.719791, 48.140106)
 5:3/0 = 0
+5:3/0/y_sort_origin = 32
 5:3/0/terrain_set = 0
 5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(128.40652, -65.02287, -127.86011, -63.930054, -128, 0, 0, 64, 128, 0)
 6:3/0 = 0
+6:3/0/y_sort_origin = 32
 6:3/0/terrain_set = 0
 6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128.30876, -63.69173, -128, 0, -96.47826, 15.760872, 0.30844116, -32.231407, 96.84837, 15.575813, 128, 0, 128.00035, -64.00017)
 7:3/0 = 0
@@ -393,13 +398,14 @@ tile_set = SubResource("TileSet_c2y7v")
 
 [node name="WallLayer" type="TileMapLayer" parent="." unique_id=729939547]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAJAPn/QwAMAAEAAAAJAPr/QwAMAAIAAAAJAPv/QwAMAAMAAAACAP3/BQAAAAEAAAACAP7/BQAAAAIAAAACAP//BQAAAAMAAAADAPz/BQAAAAEAAAADAP3/BQAAAAIAAAADAP7/BQAAAAMAAAAEAPv/BQAAAAEAAAAEAPz/BQAAAAIAAAAEAP3/BQAAAAMAAAAFAPr/BQAAAAEAAAAFAPv/BQAAAAIAAAAFAPz/BQAAAAMAAAABAP7/LgAAAAEAAAABAP//LgAAAAIAAAABAAAALgAAAAMAAAAAAP//BQAAAAEAAAAAAAAABQAAAAIAAAAAAAEABQAAAAMAAAA=")
+tile_map_data = PackedByteArray("AAAJAPn/QwAMAAEAAAAJAPr/QwAMAAIAAAAJAPv/QwAMAAMAAAACAP3/BQAAAAEAAAACAP7/BQAAAAIAAAADAPz/BQAAAAEAAAADAP3/BQAAAAIAAAAEAPv/BQAAAAEAAAAEAPz/BQAAAAIAAAAFAPr/BQAAAAEAAAAFAPv/BQAAAAIAAAABAP7/LgAAAAEAAAABAP//LgAAAAIAAAAAAP//BQAAAAEAAAAAAAAABQAAAAIAAAAAAAEABQAAAAMAAAABAAAALgAAAAMAAAACAP//BQAAAAMAAAADAP7/BQAAAAMAAAAEAP3/BQAAAAMAAAAFAPz/BQAAAAMAAAADAP//BQAAAAEAAAADAAAABQAAAAIAAAADAAEABQAAAAMAAAAEAP7/BQAAAAEAAAAEAP//BQAAAAIAAAAEAAAABQAAAAMAAAAFAP3/BQAAAAEAAAAFAP7/BQAAAAIAAAAFAP//BQAAAAMAAAAGAPz/BQAAAAEAAAAGAP3/BQAAAAIAAAAGAP7/BQAAAAMAAAAHAPv/BQAGAAEAAAAHAPz/BQAGAAIAAAAHAP3/BQAGAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
 collision_visibility_mode = 1
 
 [node name="Switch" parent="." unique_id=796593066 instance=ExtResource("8_3fu2t")]
 position = Vector2(391, -55)
+door_node = NodePath("../door")
 
 [node name="StartPosition" type="Node2D" parent="." unique_id=1010738862]
 position = Vector2(254, 125)

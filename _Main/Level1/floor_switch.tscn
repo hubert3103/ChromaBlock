@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://ce15kojxt42w8" path="res://_Main/Level1/floor_switch.gd" id="1_sn77k"]
 [ext_resource type="Texture2D" uid="uid://bgejemm26xufc" path="res://art/Isometric/switchFloorOn_E.png" id="3_0ciu0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sn77k"]
-size = Vector2(40, 34)
+[sub_resource type="CircleShape2D" id="CircleShape2D_m3lcs"]
+radius = 7.071068
 
 [node name="FloorSwitch" type="Area2D" unique_id=1662818470]
 script = ExtResource("1_sn77k")
@@ -17,5 +17,5 @@ position = Vector2(1, -177)
 texture = ExtResource("1_g13by")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1230461239]
-position = Vector2(1, 5)
-shape = SubResource("RectangleShape2D_sn77k")
+position = Vector2(1, 3)
+shape = SubResource("CircleShape2D_m3lcs")

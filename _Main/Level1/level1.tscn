@@ -543,21 +543,30 @@ tile_map_data = PackedByteArray("AAACAP//AAAIAAMAAAABAAAAAAAIAAMAAAAAAAEAAAAIAAM
 tile_set = SubResource("TileSet_c2y7v")
 
 [node name="WallLayerRight" type="TileMapLayer" parent="." unique_id=729939547]
+y_sort_enabled = true
 position = Vector2(1, 0)
+tile_map_data = PackedByteArray("AAADAPv/QwAPAAEAAAADAPz/QwAPAAIAAAADAP3/QwAPAAMAAAAEAPr/QwAPAAEAAAAEAPv/QwAPAAIAAAAEAPz/QwAPAAMAAAAFAPn/QwAPAAEAAAAFAPr/QwAPAAIAAAAFAPv/QwAPAAMAAAAGAPj/QwAPAAEAAAAGAPn/QwAPAAIAAAAGAPr/QwAPAAMAAAAHAPf/QwAPAAEAAAAHAPj/QwAPAAIAAAAHAPn/QwAPAAMAAAAIAPf/BQABAAIAAAAIAPj/BQABAAMAAAAJAPf/BQABAAIAAAAJAPj/BQABAAMAAAAKAPf/BQABAAIAAAAKAPj/BQABAAMAAAALAPf/BQABAAIAAAALAPj/BQABAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
+
+[node name="FloorLayer2" type="TileMapLayer" parent="." unique_id=1963412918]
+tile_map_data = PackedByteArray("AAAFAPz/AAAIAAMAAAAEAPz/AAADAAMAAAAEAP3/AAACAAMAAAAGAPz/AAAAAAMAAAAFAP3/AAAGAAMAAAADAP3/AAAHAAMAAAAGAPv/AAAIAAMAAAAHAPr/AAAIAAMAAAAIAPr/AAAAAAMAAAAHAPv/AAAAAAMAAAAGAPr/AAADAAMAAAAFAPv/AAADAAMAAAAJAPn/AAAAAAMAAAAIAPn/AAAIAAMAAAAHAPn/AAADAAMAAAAKAPj/AAAEAAMAAAAIAPj/AAAFAAMAAAAJAPj/AAABAAMAAAA=")
+tile_set = SubResource("TileSet_c2y7v")
+
+[node name="FloorSwitch" parent="." unique_id=1662818470 instance=ExtResource("7_blb4b")]
+position = Vector2(1026, -271)
+door_node = NodePath("../door")
+
+[node name="Crate" parent="." unique_id=2143499831 instance=ExtResource("8_q0ovb")]
+position = Vector2(767, -175)
 
 [node name="WallLayerLeft" type="TileMapLayer" parent="." unique_id=886997980]
 y_sort_enabled = true
 position = Vector2(2, 0)
-tile_map_data = PackedByteArray("AAABAP3/BQAAAAEAAAABAP7/BQAAAAIAAAABAP//BQAAAAMAAAAAAP7/LgAAAAEAAAAAAP//LgAAAAIAAAAAAAAALgAAAAMAAAD/////BQAAAAEAAAD//wAABQAAAAIAAAD//wEABQAAAAMAAAACAP3/BQAAAAIAAAACAP7/BQAAAAMAAAAHAPj/BQABAAIAAAAHAPn/BQABAAMAAAAIAPj/BQABAAIAAAAIAPn/BQABAAMAAAAJAPj/BQABAAIAAAAJAPn/BQABAAMAAAAKAPj/BQABAAIAAAAKAPn/BQABAAMAAAAGAPj/QwAPAAEAAAAGAPn/QwAPAAIAAAAGAPr/QwAPAAMAAAAFAPn/QwAPAAEAAAAFAPr/QwAPAAIAAAAFAPv/QwAPAAMAAAAEAPr/QwAPAAEAAAAEAPv/QwAPAAIAAAAEAPz/QwAPAAMAAAADAPv/QwAPAAEAAAADAPz/QwAPAAIAAAADAP3/QwAPAAMAAAACAPz/BQAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAABAP3/BQAAAAEAAAABAP7/BQAAAAIAAAABAP//BQAAAAMAAAAAAP7/LgAAAAEAAAAAAP//LgAAAAIAAAAAAAAALgAAAAMAAAD/////BQAAAAEAAAD//wAABQAAAAIAAAD//wEABQAAAAMAAAACAP3/BQAAAAIAAAACAP7/BQAAAAMAAAACAPz/BQAAAAEAAAAKAPf/QwAPAAEAAAAKAPj/QwAPAAIAAAAKAPn/QwAPAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
 y_sort_origin = 1
-
-[node name="FloorLayer2" type="TileMapLayer" parent="." unique_id=1963412918]
-tile_map_data = PackedByteArray("AAAFAPz/AAAIAAMAAAAEAPz/AAADAAMAAAAEAP3/AAACAAMAAAAGAPz/AAAAAAMAAAAFAP3/AAAGAAMAAAADAP3/AAAHAAMAAAAGAPv/AAAIAAMAAAAHAPr/AAAIAAMAAAAIAPr/AAAAAAMAAAAHAPv/AAAAAAMAAAAGAPr/AAADAAMAAAAFAPv/AAADAAMAAAAIAPn/AAABAAMAAAAHAPn/AAAFAAMAAAAJAPn/QwAMAAEAAAA=")
-tile_set = SubResource("TileSet_c2y7v")
 
 [node name="StairsLayer" type="TileMapLayer" parent="." unique_id=591240380]
 y_sort_enabled = true
@@ -574,13 +583,6 @@ tile_map_data = PackedByteArray("AAD+/wAARQALAAIAAAD+/wEARQALAAMAAAAIAPr/RQACAAI
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
 y_sort_origin = 1
-
-[node name="FloorSwitch" parent="." unique_id=1662818470 instance=ExtResource("7_blb4b")]
-position = Vector2(1025, -271)
-door_node = NodePath("../door")
-
-[node name="Crate" parent="." unique_id=2143499831 instance=ExtResource("8_q0ovb")]
-position = Vector2(767, -175)
 
 [node name="door" parent="." unique_id=1486743604 instance=ExtResource("9_wvqtl")]
 position = Vector2(1344, 64)

@@ -17,14 +17,13 @@ unpressed_texture = ExtResource("1_7x1xb")
 pressed_texture = ExtResource("3_ohpec")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1685217969]
-position = Vector2(192, 242)
 texture = ExtResource("1_7x1xb")
 offset = Vector2(26, -106)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1786742840]
+position = Vector2(-1, 77)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=557197240]
-position = Vector2(194, 241)
 shape = SubResource("RectangleShape2D_7x1xb")
 
 [node name="SwitchSound" type="AudioStreamPlayer2D" parent="." unique_id=441639175]

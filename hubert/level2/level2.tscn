@@ -41,8 +41,11 @@ texture_region_size = Vector2i(256, 128)
 texture = ExtResource("3_ulch6")
 texture_region_size = Vector2i(256, 128)
 0:1/0 = 0
+0:1/0/y_sort_origin = 162
 0:2/0 = 0
+0:2/0/y_sort_origin = 97
 0:3/0 = 0
+0:3/0/y_sort_origin = 32
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128.30876, -63.69173, -128, 0, -96.47826, 15.760872, -63.845947, -0.15421295, -64.15438, -16.501247, -16.03859, -40.559143, 0.30844116, -32.231407, 31.707016, -48.146492, 31.768768, -64.3086)
 1:2/0 = 0
 1:3/0 = 0
@@ -158,7 +161,6 @@ texture_region_size = Vector2i(256, 128)
 6:1/0 = 0
 7:1/0 = 0
 0:2/0 = 0
-0:2/0/z_index = 1
 0:2/0/y_sort_origin = 97
 0:2/0/terrain_set = 0
 1:2/0 = 0
@@ -220,7 +222,6 @@ texture_region_size = Vector2i(256, 128)
 7:2/0 = 0
 7:2/0/terrain_set = 0
 0:3/0 = 0
-0:3/0/z_index = 1
 0:3/0/y_sort_origin = 32
 0:3/0/terrain_set = 0
 0:3/0/terrain = 0
@@ -392,15 +393,13 @@ tile_set = SubResource("TileSet_c2y7v")
 
 [node name="WallLayer" type="TileMapLayer" parent="." unique_id=729939547]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAJAPn/QwAMAAEAAAAJAPr/QwAMAAIAAAAJAPv/QwAMAAMAAAACAP3/BQAAAAEAAAACAP7/BQAAAAIAAAACAP//BQAAAAMAAAADAPz/BQAAAAEAAAADAP3/BQAAAAIAAAADAP7/BQAAAAMAAAAEAPv/BQAAAAEAAAAEAPz/BQAAAAIAAAAEAP3/BQAAAAMAAAAFAPr/BQAAAAEAAAAFAPv/BQAAAAIAAAAFAPz/BQAAAAMAAAA=")
+tile_map_data = PackedByteArray("AAAJAPn/QwAMAAEAAAAJAPr/QwAMAAIAAAAJAPv/QwAMAAMAAAACAP3/BQAAAAEAAAACAP7/BQAAAAIAAAACAP//BQAAAAMAAAADAPz/BQAAAAEAAAADAP3/BQAAAAIAAAADAP7/BQAAAAMAAAAEAPv/BQAAAAEAAAAEAPz/BQAAAAIAAAAEAP3/BQAAAAMAAAAFAPr/BQAAAAEAAAAFAPv/BQAAAAIAAAAFAPz/BQAAAAMAAAABAP7/LgAAAAEAAAABAP//LgAAAAIAAAABAAAALgAAAAMAAAAAAP//BQAAAAEAAAAAAAAABQAAAAIAAAAAAAEABQAAAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
 collision_visibility_mode = 1
 
-[node name="Switch" parent="WallLayer" unique_id=796593066 instance=ExtResource("8_3fu2t")]
-z_index = 10
-position = Vector2(485, 20)
-door_node = NodePath("../../door")
+[node name="Switch" parent="." unique_id=796593066 instance=ExtResource("8_3fu2t")]
+position = Vector2(391, -55)
 
 [node name="StartPosition" type="Node2D" parent="." unique_id=1010738862]
 position = Vector2(254, 125)

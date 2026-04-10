@@ -521,6 +521,12 @@ tile_proxies/coords_level = [[1, Vector2i(0, 1)], [46, Vector2i(0, 1)], [1, Vect
 [sub_resource type="CircleShape2D" id="CircleShape2D_wvqtl"]
 radius = 54.08327
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsw03"]
+size = Vector2(35.124527, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kne48"]
+size = Vector2(49.466255, 20)
+
 [node name="Level1" type="Node2D" unique_id=986222045]
 script = ExtResource("1_jj0qm")
 
@@ -537,21 +543,30 @@ tile_map_data = PackedByteArray("AAACAP//AAAIAAMAAAABAAAAAAAIAAMAAAAAAAEAAAAIAAM
 tile_set = SubResource("TileSet_c2y7v")
 
 [node name="WallLayerRight" type="TileMapLayer" parent="." unique_id=729939547]
+y_sort_enabled = true
 position = Vector2(1, 0)
+tile_map_data = PackedByteArray("AAADAPv/QwAPAAEAAAADAPz/QwAPAAIAAAADAP3/QwAPAAMAAAAEAPr/QwAPAAEAAAAEAPv/QwAPAAIAAAAEAPz/QwAPAAMAAAAFAPn/QwAPAAEAAAAFAPr/QwAPAAIAAAAFAPv/QwAPAAMAAAAGAPj/QwAPAAEAAAAGAPn/QwAPAAIAAAAGAPr/QwAPAAMAAAAHAPf/QwAPAAEAAAAHAPj/QwAPAAIAAAAHAPn/QwAPAAMAAAAIAPf/BQABAAIAAAAIAPj/BQABAAMAAAAJAPf/BQABAAIAAAAJAPj/BQABAAMAAAAKAPf/BQABAAIAAAAKAPj/BQABAAMAAAALAPf/BQABAAIAAAALAPj/BQABAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
+
+[node name="FloorLayer2" type="TileMapLayer" parent="." unique_id=1963412918]
+tile_map_data = PackedByteArray("AAAFAPz/AAAIAAMAAAAEAPz/AAADAAMAAAAEAP3/AAACAAMAAAAGAPz/AAAAAAMAAAAFAP3/AAAGAAMAAAADAP3/AAAHAAMAAAAGAPv/AAAIAAMAAAAHAPr/AAAIAAMAAAAIAPr/AAAAAAMAAAAHAPv/AAAAAAMAAAAGAPr/AAADAAMAAAAFAPv/AAADAAMAAAAJAPn/AAAAAAMAAAAIAPn/AAAIAAMAAAAHAPn/AAADAAMAAAAKAPj/AAAEAAMAAAAIAPj/AAAFAAMAAAAJAPj/AAABAAMAAAA=")
+tile_set = SubResource("TileSet_c2y7v")
+
+[node name="FloorSwitch" parent="." unique_id=1662818470 instance=ExtResource("7_blb4b")]
+position = Vector2(1026, -271)
+door_node = NodePath("../door")
+
+[node name="Crate" parent="." unique_id=2143499831 instance=ExtResource("8_q0ovb")]
+position = Vector2(767, -175)
 
 [node name="WallLayerLeft" type="TileMapLayer" parent="." unique_id=886997980]
 y_sort_enabled = true
 position = Vector2(2, 0)
-tile_map_data = PackedByteArray("AAABAP3/BQAAAAEAAAABAP7/BQAAAAIAAAABAP//BQAAAAMAAAAAAP7/LgAAAAEAAAAAAP//LgAAAAIAAAAAAAAALgAAAAMAAAD/////BQAAAAEAAAD//wAABQAAAAIAAAD//wEABQAAAAMAAAACAP3/BQAAAAIAAAACAP7/BQAAAAMAAAAHAPj/BQABAAIAAAAHAPn/BQABAAMAAAAIAPj/BQABAAIAAAAIAPn/BQABAAMAAAAJAPj/BQABAAIAAAAJAPn/BQABAAMAAAAKAPj/BQABAAIAAAAKAPn/BQABAAMAAAAGAPj/QwAPAAEAAAAGAPn/QwAPAAIAAAAGAPr/QwAPAAMAAAAFAPn/QwAPAAEAAAAFAPr/QwAPAAIAAAAFAPv/QwAPAAMAAAAEAPr/QwAPAAEAAAAEAPv/QwAPAAIAAAAEAPz/QwAPAAMAAAADAPv/QwAPAAEAAAADAPz/QwAPAAIAAAADAP3/QwAPAAMAAAACAPz/BQAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAABAP3/BQAAAAEAAAABAP7/BQAAAAIAAAABAP//BQAAAAMAAAAAAP7/LgAAAAEAAAAAAP//LgAAAAIAAAAAAAAALgAAAAMAAAD/////BQAAAAEAAAD//wAABQAAAAIAAAD//wEABQAAAAMAAAACAP3/BQAAAAIAAAACAP7/BQAAAAMAAAACAPz/BQAAAAEAAAAKAPf/QwAPAAEAAAAKAPj/QwAPAAIAAAAKAPn/QwAPAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
 y_sort_origin = 1
-
-[node name="FloorLayer2" type="TileMapLayer" parent="." unique_id=1963412918]
-tile_map_data = PackedByteArray("AAAFAPz/AAAIAAMAAAAEAPz/AAADAAMAAAAEAP3/AAACAAMAAAAGAPz/AAAAAAMAAAAFAP3/AAAGAAMAAAADAP3/AAAHAAMAAAAGAPv/AAAIAAMAAAAHAPr/AAAIAAMAAAAIAPr/AAAAAAMAAAAHAPv/AAAAAAMAAAAGAPr/AAADAAMAAAAFAPv/AAADAAMAAAAIAPn/AAABAAMAAAAHAPn/AAAFAAMAAAAJAPn/QwAMAAEAAAA=")
-tile_set = SubResource("TileSet_c2y7v")
 
 [node name="StairsLayer" type="TileMapLayer" parent="." unique_id=591240380]
 y_sort_enabled = true
@@ -568,13 +583,6 @@ tile_map_data = PackedByteArray("AAD+/wAARQALAAIAAAD+/wEARQALAAMAAAAIAPr/RQACAAI
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
 y_sort_origin = 1
-
-[node name="FloorSwitch" parent="." unique_id=1662818470 instance=ExtResource("7_blb4b")]
-position = Vector2(1022, -303)
-door_node = NodePath("../door")
-
-[node name="Crate" parent="." unique_id=2143499831 instance=ExtResource("8_q0ovb")]
-position = Vector2(775, -168)
 
 [node name="door" parent="." unique_id=1486743604 instance=ExtResource("9_wvqtl")]
 position = Vector2(1344, 64)
@@ -645,6 +653,20 @@ text = "Level 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Border" type="StaticBody2D" parent="." unique_id=429707795]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border" unique_id=1717268713]
+position = Vector2(256.53845, 330.733)
+rotation = 0.46251225
+scale = Vector2(24.680002, 1)
+shape = SubResource("RectangleShape2D_qsw03")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Border" unique_id=545780088]
+position = Vector2(1484.98, 101.897156)
+rotation = -0.46251225
+scale = Vector2(38.28, 1)
+shape = SubResource("RectangleShape2D_kne48")
 
 [connection signal="body_entered" from="FloorSwitch" to="FloorSwitch" method="_on_body_entered"]
 [connection signal="body_exited" from="FloorSwitch" to="FloorSwitch" method="_on_body_exited"]

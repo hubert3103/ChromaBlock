@@ -411,7 +411,6 @@ animations = [{
 radius = 18.0
 
 [node name="Player" type="CharacterBody2D" unique_id=113525314]
-position = Vector2(1, 2)
 script = ExtResource("1_lq7gc")
 speed = null
 metadata/_edit_group_ = true

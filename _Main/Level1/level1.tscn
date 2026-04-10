@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://dxwglyyccnpt0" path="res://_Main/Level1/level_end_trigger.gd" id="11_ch3wh"]
 [ext_resource type="PackedScene" uid="uid://t75xcadrkxgr" path="res://_Main/Level1/hud.tscn" id="12_dxddx"]
 [ext_resource type="FontFile" uid="uid://ylgw03k7bb5x" path="res://art/Fonts/3DIsometric-Bold.otf" id="13_45eu4"]
+[ext_resource type="PackedScene" uid="uid://bna6hi82dp64x" path="res://_Main/reset_screen.tscn" id="16_kne48"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vpdkp"]
 texture = ExtResource("1_vpdkp")
@@ -84,7 +85,9 @@ texture_region_size = Vector2i(256, 128)
 10:2/0 = 0
 10:3/0 = 0
 11:2/0 = 0
+11:2/0/y_sort_origin = 97
 11:3/0 = 0
+11:3/0/y_sort_origin = 32
 12:1/0 = 0
 12:2/0 = 0
 12:3/0 = 0
@@ -579,7 +582,7 @@ y_sort_origin = 1
 [node name="DecorationLayer" type="TileMapLayer" parent="." unique_id=517820937]
 y_sort_enabled = true
 position = Vector2(8, 0)
-tile_map_data = PackedByteArray("AAD+/wAARQALAAIAAAD+/wEARQALAAMAAAAIAPr/RQACAAIAAAAIAPv/RQACAAMAAAA=")
+tile_map_data = PackedByteArray("AAD+/wAARQALAAIAAAD+/wEARQALAAMAAAAIAPr/RQACAAIAAAAIAPv/RQACAAMAAAABAPz/KgADAAIAAAABAP3/KgADAAMAAAD///7/KgALAAIAAAD/////KgALAAMAAAAAAP3/KgAHAAIAAAAAAP7/KgAHAAMAAAADAPr/KgALAAIAAAADAPv/KgALAAMAAAAGAPf/KgADAAIAAAAGAPj/KgADAAMAAAAEAPn/KgAHAAIAAAAEAPr/KgAHAAMAAAAFAPj/KgAHAAIAAAAFAPn/KgAHAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
 y_sort_origin = 1
@@ -599,19 +602,19 @@ metadata/_edit_group_ = true
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_wvqtl")
 
+[node name="TopLayer" type="TileMapLayer" parent="." unique_id=862732334]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAKAPr/LgAVAAIAAAAKAPv/LgAVAAMAAAAFAPv/RQAPAAIAAAAFAPz/RQAPAAMAAAA=")
+tile_set = SubResource("TileSet_c2y7v")
+occlusion_enabled = false
+
 [node name="Player" parent="." unique_id=113525314 instance=ExtResource("3_8q58m")]
 position = Vector2(-178, 45)
 speed = 150
 
-[node name="TopLayer" type="TileMapLayer" parent="." unique_id=862732334]
-y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAKAPr/LgAVAAIAAAAKAPv/LgAVAAMAAAAFAPj/KgAAAAEAAAAFAPn/KgAAAAIAAAAFAPr/KgAAAAMAAAAGAPf/KgAIAAEAAAAGAPj/KgAIAAIAAAAGAPn/KgAIAAMAAAAEAPn/KgAAAAEAAAAEAPr/KgAAAAIAAAAEAPv/KgAAAAMAAAAFAPv/RQAPAAIAAAAFAPz/RQAPAAMAAAA=")
-tile_set = SubResource("TileSet_c2y7v")
-occlusion_enabled = false
-
 [node name="TopLayer2" type="TileMapLayer" parent="." unique_id=1874711443]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAKAPr/LgAVAAIAAAAKAPv/LgAVAAMAAAAFAPj/KgAAAAEAAAAFAPn/KgAAAAIAAAAFAPr/RQAUAAIAAAAGAPf/KgAIAAEAAAAGAPj/KgAIAAIAAAAGAPn/KgAIAAMAAAAEAPn/KgAAAAEAAAAEAPr/KgAAAAIAAAAEAPv/KgAAAAMAAAAFAPv/RQAUAAMAAAAFAPz/RQAPAAMAAAA=")
+tile_map_data = PackedByteArray("AAAKAPr/LgAVAAIAAAAKAPv/LgAVAAMAAAAFAPr/RQAUAAIAAAAFAPv/RQAUAAMAAAAFAPz/RQAPAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
 
@@ -667,6 +670,10 @@ position = Vector2(1484.98, 101.897156)
 rotation = -0.46251225
 scale = Vector2(38.28, 1)
 shape = SubResource("RectangleShape2D_kne48")
+
+[node name="Reset screen" parent="." unique_id=756244072 instance=ExtResource("16_kne48")]
+process_mode = 3
+visible = false
 
 [connection signal="body_entered" from="FloorSwitch" to="FloorSwitch" method="_on_body_entered"]
 [connection signal="body_exited" from="FloorSwitch" to="FloorSwitch" method="_on_body_exited"]

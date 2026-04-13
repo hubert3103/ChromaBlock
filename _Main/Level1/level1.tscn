@@ -370,8 +370,11 @@ texture_region_size = Vector2i(256, 128)
 13:3/0 = 0
 13:3/0/y_sort_origin = 32
 14:1/0 = 0
+14:1/0/y_sort_origin = 162
 14:2/0 = 0
+14:2/0/y_sort_origin = 97
 14:3/0 = 0
+14:3/0/y_sort_origin = 32
 15:1/0 = 0
 15:1/0/y_sort_origin = 162
 15:2/0 = 0
@@ -476,9 +479,10 @@ texture_region_size = Vector2i(256, 128)
 12:3/0 = 0
 13:3/0 = 0
 14:2/0 = 0
-14:2/0/z_index = 97
+14:2/0/y_sort_origin = 97
 14:3/0 = 0
 14:3/0/y_sort_origin = 32
+14:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -64, -128, 0, 0, 64, 128, 0)
 15:2/0 = 0
 15:3/0 = 0
 16:2/0 = 0
@@ -490,7 +494,7 @@ texture_region_size = Vector2i(256, 128)
 19:2/0 = 0
 19:3/0 = 0
 20:2/0 = 0
-20:2/0/z_index = 97
+20:2/0/y_sort_origin = 97
 20:3/0 = 0
 20:3/0/y_sort_origin = 32
 21:2/0 = 0
@@ -530,6 +534,12 @@ size = Vector2(35.124527, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kne48"]
 size = Vector2(49.466255, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4pb2"]
+size = Vector2(143.11604, 14.53244)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmjml"]
+size = Vector2(548.27734, 2.219223)
+
 [node name="Level1" type="Node2D" unique_id=986222045]
 script = ExtResource("1_jj0qm")
 
@@ -563,18 +573,18 @@ door_node = NodePath("../door")
 [node name="Crate" parent="." unique_id=2143499831 instance=ExtResource("8_q0ovb")]
 position = Vector2(767, -175)
 
-[node name="WallLayerLeft" type="TileMapLayer" parent="." unique_id=886997980]
+[node name="StairsLayer" type="TileMapLayer" parent="." unique_id=591240380]
 y_sort_enabled = true
-position = Vector2(2, 0)
-tile_map_data = PackedByteArray("AAABAP3/BQAAAAEAAAABAP7/BQAAAAIAAAABAP//BQAAAAMAAAAAAP7/LgAAAAEAAAAAAP//LgAAAAIAAAAAAAAALgAAAAMAAAD/////BQAAAAEAAAD//wAABQAAAAIAAAD//wEABQAAAAMAAAACAP3/BQAAAAIAAAACAP7/BQAAAAMAAAACAPz/BQAAAAEAAAAKAPf/QwAPAAEAAAAKAPj/QwAPAAIAAAAKAPn/QwAPAAMAAAA=")
+position = Vector2(4, 0)
+tile_map_data = PackedByteArray("AAADAP3/XAAWAAIAAAADAP7/XAAWAAMAAAAEAP3/XAAWAAIAAAAEAP7/XAAWAAMAAAAFAP3/XAAOAAIAAAAFAP7/XAAOAAMAAAAGAPz/XAAUAAIAAAAGAP3/XAAUAAMAAAAHAPv/XAAUAAIAAAAHAPz/XAAUAAMAAAAIAPn/QwAMAAEAAAAIAPr/QwAMAAIAAAAIAPv/QwAMAAMAAAAJAPn/QwAMAAIAAAAJAPr/QwAMAAMAAAAJAPj/QwAMAAEAAAAKAPf/QwAPAAEAAAAKAPj/QwAPAAIAAAAKAPn/QwAPAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
 y_sort_origin = 1
 
-[node name="StairsLayer" type="TileMapLayer" parent="." unique_id=591240380]
+[node name="WallLayerLeft" type="TileMapLayer" parent="." unique_id=886997980]
 y_sort_enabled = true
-position = Vector2(4, 0)
-tile_map_data = PackedByteArray("AAADAP3/XAAWAAIAAAADAP7/XAAWAAMAAAAEAP3/XAAWAAIAAAAEAP7/XAAWAAMAAAAFAP3/XAAOAAIAAAAFAP7/XAAOAAMAAAAGAPz/XAAUAAIAAAAGAP3/XAAUAAMAAAAHAPv/XAAUAAIAAAAHAPz/XAAUAAMAAAAIAPn/QwAMAAEAAAAIAPr/QwAMAAIAAAAIAPv/QwAMAAMAAAAJAPn/QwAMAAIAAAAJAPr/QwAMAAMAAAAJAPj/QwAMAAEAAAAJAPv/QwAMAAMAAAA=")
+position = Vector2(2, 0)
+tile_map_data = PackedByteArray("AAABAP3/BQAAAAEAAAABAP7/BQAAAAIAAAABAP//BQAAAAMAAAAAAP7/LgAAAAEAAAAAAP//LgAAAAIAAAAAAAAALgAAAAMAAAD/////BQAAAAEAAAD//wAABQAAAAIAAAD//wEABQAAAAMAAAACAP3/BQAAAAIAAAACAP7/BQAAAAMAAAACAPz/BQAAAAEAAAAJAPr/BQABAAIAAAAJAPv/BQABAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
 y_sort_origin = 1
@@ -582,7 +592,7 @@ y_sort_origin = 1
 [node name="DecorationLayer" type="TileMapLayer" parent="." unique_id=517820937]
 y_sort_enabled = true
 position = Vector2(8, 0)
-tile_map_data = PackedByteArray("AAD+/wAARQALAAIAAAD+/wEARQALAAMAAAAIAPr/RQACAAIAAAAIAPv/RQACAAMAAAABAPz/KgADAAIAAAABAP3/KgADAAMAAAD///7/KgALAAIAAAD/////KgALAAMAAAAAAP3/KgAHAAIAAAAAAP7/KgAHAAMAAAADAPr/KgALAAIAAAADAPv/KgALAAMAAAAGAPf/KgADAAIAAAAGAPj/KgADAAMAAAAEAPn/KgAHAAIAAAAEAPr/KgAHAAMAAAAFAPj/KgAHAAIAAAAFAPn/KgAHAAMAAAA=")
+tile_map_data = PackedByteArray("AAD+/wAARQALAAIAAAD+/wEARQALAAMAAAABAPz/KgADAAIAAAABAP3/KgADAAMAAAD///7/KgALAAIAAAD/////KgALAAMAAAAAAP3/KgAHAAIAAAAAAP7/KgAHAAMAAAADAPr/KgALAAIAAAADAPv/KgALAAMAAAAGAPf/KgADAAIAAAAGAPj/KgADAAMAAAAEAPn/KgAHAAIAAAAEAPr/KgAHAAMAAAAFAPj/KgAHAAIAAAAFAPn/KgAHAAMAAAAIAPv/RQACAAMAAAAIAPr/RQACAAIAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
 y_sort_origin = 1
@@ -602,15 +612,15 @@ metadata/_edit_group_ = true
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_wvqtl")
 
+[node name="Player" parent="." unique_id=113525314 instance=ExtResource("3_8q58m")]
+position = Vector2(-178, 45)
+speed = 150
+
 [node name="TopLayer" type="TileMapLayer" parent="." unique_id=862732334]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAKAPr/LgAVAAIAAAAKAPv/LgAVAAMAAAAFAPv/RQAPAAIAAAAFAPz/RQAPAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
-
-[node name="Player" parent="." unique_id=113525314 instance=ExtResource("3_8q58m")]
-position = Vector2(-178, 45)
-speed = 150
 
 [node name="TopLayer2" type="TileMapLayer" parent="." unique_id=1874711443]
 y_sort_enabled = true
@@ -657,19 +667,29 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Border" type="StaticBody2D" parent="." unique_id=429707795]
+[node name="Collisions" type="StaticBody2D" parent="." unique_id=429707795]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Border" unique_id=1717268713]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions" unique_id=1717268713]
 position = Vector2(256.53845, 330.733)
 rotation = 0.46251225
 scale = Vector2(24.680002, 1)
 shape = SubResource("RectangleShape2D_qsw03")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Border" unique_id=545780088]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions" unique_id=545780088]
 position = Vector2(1484.98, 101.897156)
 rotation = -0.46251225
 scale = Vector2(38.28, 1)
 shape = SubResource("RectangleShape2D_kne48")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions" unique_id=1897536753]
+position = Vector2(1219.9999, 24.999992)
+rotation = 0.46251225
+shape = SubResource("RectangleShape2D_v4pb2")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions" unique_id=1978408231]
+position = Vector2(1275.5015, -264.98853)
+rotation = -0.46251225
+shape = SubResource("RectangleShape2D_xmjml")
 
 [node name="Reset screen" parent="." unique_id=756244072 instance=ExtResource("16_kne48")]
 process_mode = 3

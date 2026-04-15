@@ -59,6 +59,9 @@
 [ext_resource type="Texture2D" uid="uid://buonri54gwog5" path="res://art/Character/Human_0_Run5.png" id="49_f44fr"]
 [ext_resource type="Texture2D" uid="uid://cwy4pegonp3n" path="res://art/Character/Human_0_Run9.png" id="50_sg2wl"]
 [ext_resource type="Texture2D" uid="uid://dbpt2j2og436v" path="res://art/Character/Human_0_Run8.png" id="51_hk6cr"]
+[ext_resource type="Script" uid="uid://2dqx025vsmuk" path="res://_Main/Player/footstep_player.gd" id="60_roxw6"]
+[ext_resource type="AudioStream" uid="uid://du2wmv4kfy7tu" path="res://art/soundEffects/footstep_concrete_000.ogg" id="61_nkdg8"]
+[ext_resource type="AudioStream" uid="uid://dchv007qqrrwv" path="res://art/soundEffects/footstep_concrete_001.ogg" id="62_rwit8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w401x"]
 animations = [{
@@ -410,9 +413,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_j6lof"]
 radius = 18.0
 
-[node name="Player" type="CharacterBody2D" unique_id=113525314]
+[node name="Player" type="CharacterBody2D" unique_id=113525314 groups=["player"]]
 script = ExtResource("1_lq7gc")
-speed = null
+footstep_1 = ExtResource("61_nkdg8")
+footstep_2 = ExtResource("62_rwit8")
+step_interval = 0.6
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1294496515]
@@ -426,3 +431,8 @@ shape = SubResource("CircleShape2D_j6lof")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=72991539]
 position_smoothing_enabled = true
+
+[node name="FootstepPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1157914479]
+script = ExtResource("60_roxw6")
+footstep_1 = ExtResource("61_nkdg8")
+footstep_2 = ExtResource("62_rwit8")

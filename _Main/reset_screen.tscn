@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://bna6hi82dp64x"]
+
+[ext_resource type="Script" uid="uid://dyc3cxnyf74p6" path="res://_Main/reset_screen.gd" id="1_7buln"]
+[ext_resource type="FontFile" uid="uid://ylgw03k7bb5x" path="res://art/Fonts/3DIsometric-Bold.otf" id="1_w3mmp"]
+
+[node name="Reset screen" type="CanvasLayer" unique_id=756244072]
+script = ExtResource("1_7buln")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1050955165]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -19.0
+offset_top = -23.0
+offset_right = 23.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39607844)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=490428375]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = 246.0
+offset_right = 13.0
+offset_bottom = -253.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.73333335)
+
+[node name="Level complete" type="Label" parent="." unique_id=955360831]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -342.5
+offset_top = -100.0
+offset_right = 342.5
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_w3mmp")
+theme_override_font_sizes/font_size = 64
+text = "RESTART LEVEL?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="RestartButton" type="Button" parent="." unique_id=387350185]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = 113.0
+offset_right = -27.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "RESTART"
+
+[node name="CancelButton" type="Button" parent="." unique_id=1742425007]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = 113.0
+offset_right = 160.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "CANCEL"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CancelButton" to="." method="_on_cancel_button_pressed"]

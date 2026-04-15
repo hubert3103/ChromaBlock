@@ -414,7 +414,6 @@ animations = [{
 radius = 18.0
 
 [node name="Player" type="CharacterBody2D" unique_id=113525314 groups=["player"]]
-position = Vector2(1, 2)
 script = ExtResource("1_lq7gc")
 footstep_1 = ExtResource("61_nkdg8")
 footstep_2 = ExtResource("62_rwit8")

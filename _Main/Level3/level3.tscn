@@ -540,7 +540,7 @@ size = Vector2(143.11604, 14.53244)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xmjml"]
 size = Vector2(548.27734, 2.219223)
 
-[node name="Level1" type="Node2D" unique_id=986222045]
+[node name="Level3" type="Node2D" unique_id=986222045]
 script = ExtResource("1_o2m2e")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1275940084]
@@ -606,7 +606,7 @@ metadata/_edit_group_ = true
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_wvqtl")
 
-[node name="Crate" parent="." unique_id=2143499831 instance=ExtResource("16_6vd43")]
+[node name="Crate_colour" parent="." unique_id=2143499831 instance=ExtResource("16_6vd43")]
 position = Vector2(507, 85)
 
 [node name="Player" parent="." unique_id=113525314 instance=ExtResource("13_wiag4")]

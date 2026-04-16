@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cgsi0ag8eakqp"]
+
+[ext_resource type="Script" uid="uid://bm7sje37x6ynq" path="res://_Main/Level3/Crate_colour/crate_colour.gd" id="1_o6u7o"]
+[ext_resource type="Texture2D" uid="uid://dy2cyt7bky18u" path="res://_Main/Level3/Crate_colour/Sprites/block1.png" id="2_fygj8"]
+[ext_resource type="Texture2D" uid="uid://beynw5flqumvt" path="res://_Main/Level3/Crate_colour/Sprites/block2.png" id="3_s3tgf"]
+[ext_resource type="Texture2D" uid="uid://crnwhjp5suc6s" path="res://_Main/Level3/Crate_colour/Sprites/block3.png" id="4_fygj8"]
+[ext_resource type="Texture2D" uid="uid://bgfmx3lamubgk" path="res://art/Isometric/crate_E.png" id="4_jujdx"]
+[ext_resource type="AudioStream" uid="uid://dgxlkyynlfhfp" path="res://art/soundEffects/freesound_community-stone-push-37412.mp3" id="5_n8ktm"]
+[ext_resource type="Texture2D" uid="uid://c2wvtqjfxwok" path="res://_Main/Level3/Crate_colour/Sprites/block4.png" id="5_s3tgf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxb5b"]
+size = Vector2(61.811012, 60.450005)
+
+[node name="Crate" type="CharacterBody2D" unique_id=2143499831]
+script = ExtResource("1_o6u7o")
+sprite1 = ExtResource("2_fygj8")
+sprite2 = ExtResource("3_s3tgf")
+sprite3 = ExtResource("4_fygj8")
+sprite4 = ExtResource("5_s3tgf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=437452478]
+position = Vector2(0, -145)
+texture = ExtResource("4_jujdx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1592186791]
+position = Vector2(-2.0000005, 11.999998)
+rotation = 0.46425754
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_rxb5b")
+
+[node name="PushSound" type="AudioStreamPlayer2D" parent="." unique_id=1247803083]
+stream = ExtResource("5_n8ktm")

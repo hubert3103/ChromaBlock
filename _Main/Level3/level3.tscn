@@ -11,8 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://ddaxdlvfei4vg" path="res://_Main/Level1/floor_switch.tscn" id="9_p3urd"]
 [ext_resource type="PackedScene" uid="uid://bx66tuty2v77e" path="res://_Main/Level1/door.tscn" id="11_dq28a"]
 [ext_resource type="Script" uid="uid://dxwglyyccnpt0" path="res://_Main/Level1/level_end_trigger.gd" id="12_umshf"]
+[ext_resource type="Texture2D" uid="uid://qqfn4onkeg7j" path="res://_Main/Level3/Crate_colour/Sprites/block5.png" id="13_583a6"]
 [ext_resource type="PackedScene" uid="uid://c41ywpnm7v6fu" path="res://_Main/Player/player.tscn" id="13_wiag4"]
 [ext_resource type="PackedScene" uid="uid://t75xcadrkxgr" path="res://_Main/Level1/hud.tscn" id="14_6bmew"]
+[ext_resource type="Texture2D" uid="uid://bqyaylxr6qba3" path="res://_Main/Level3/Crate_colour/Sprites/block6.png" id="14_prrh5"]
 [ext_resource type="FontFile" uid="uid://ylgw03k7bb5x" path="res://art/Fonts/3DIsometric-Bold.otf" id="15_esln7"]
 [ext_resource type="PackedScene" uid="uid://cgsi0ag8eakqp" path="res://_Main/Level3/Crate_colour/crate_colour.tscn" id="16_6vd43"]
 [ext_resource type="PackedScene" uid="uid://bna6hi82dp64x" path="res://_Main/reset_screen.tscn" id="16_gc1mh"]
@@ -608,6 +610,8 @@ shape = SubResource("CircleShape2D_wvqtl")
 
 [node name="Crate_colour" parent="." unique_id=2143499831 instance=ExtResource("16_6vd43")]
 position = Vector2(507, 85)
+sprite5 = ExtResource("13_583a6")
+sprite6 = ExtResource("14_prrh5")
 
 [node name="Player" parent="." unique_id=113525314 instance=ExtResource("13_wiag4")]
 position = Vector2(-178, 45)

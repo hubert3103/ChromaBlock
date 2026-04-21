@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://k2gj1cdfkcae" path="res://art/Tilesheet/block_tilesheet.png" id="6_74xub"]
 [ext_resource type="Texture2D" uid="uid://cc2vctytxb1y" path="res://art/Tilesheet/other_tilesheet.png" id="7_gpqpo"]
 [ext_resource type="Texture2D" uid="uid://bagaenui0u2ni" path="res://art/Tilesheet/stair_tilesheet.png" id="8_2x160"]
-[ext_resource type="PackedScene" uid="uid://ddaxdlvfei4vg" path="res://_Main/Level1/floor_switch.tscn" id="9_p3urd"]
+[ext_resource type="PackedScene" uid="uid://bclorvpbmwu0n" path="res://_Main/Level3/floor_switch_colour/floor_switch_colour.tscn" id="11_583a6"]
 [ext_resource type="PackedScene" uid="uid://bx66tuty2v77e" path="res://_Main/Level1/door.tscn" id="11_dq28a"]
 [ext_resource type="Script" uid="uid://dxwglyyccnpt0" path="res://_Main/Level1/level_end_trigger.gd" id="12_umshf"]
 [ext_resource type="Texture2D" uid="uid://qqfn4onkeg7j" path="res://_Main/Level3/Crate_colour/Sprites/block5.png" id="13_583a6"]
@@ -566,11 +566,6 @@ occlusion_enabled = false
 [node name="FloorLayer2" type="TileMapLayer" parent="." unique_id=1963412918]
 tile_set = SubResource("TileSet_c2y7v")
 
-[node name="FloorSwitch" parent="." unique_id=1662818470 instance=ExtResource("9_p3urd")]
-position = Vector2(769, -16)
-unpressed_texture = null
-pressed_texture = null
-
 [node name="StairsLayer" type="TileMapLayer" parent="." unique_id=591240380]
 y_sort_enabled = true
 position = Vector2(4, 0)
@@ -607,6 +602,8 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEndTrigger" unique_id=740663761]
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_wvqtl")
+
+[node name="FloorSwitch" parent="." unique_id=1662818470 instance=ExtResource("11_583a6")]
 
 [node name="Crate_colour" parent="." unique_id=2143499831 instance=ExtResource("16_6vd43")]
 position = Vector2(507, 85)
@@ -696,6 +693,4 @@ shape = SubResource("RectangleShape2D_xmjml")
 process_mode = 3
 visible = false
 
-[connection signal="body_entered" from="FloorSwitch" to="FloorSwitch" method="_on_body_entered"]
-[connection signal="body_exited" from="FloorSwitch" to="FloorSwitch" method="_on_body_exited"]
 [connection signal="body_entered" from="LevelEndTrigger" to="LevelEndTrigger" method="_on_body_entered"]

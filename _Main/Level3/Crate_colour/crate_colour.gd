@@ -111,6 +111,5 @@ func set_sprite(index: int):
 		5: sprite.texture = sprite5
 		6: sprite.texture = sprite6
 
-
 func get_crate_id():
 	return crate_id

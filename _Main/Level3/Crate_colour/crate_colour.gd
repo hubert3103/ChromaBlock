@@ -113,3 +113,7 @@ func set_sprite(index: int):
 
 func get_crate_id():
 	return crate_id
+
+
+func is_red_active():
+	return current_sprite == 3 or current_sprite == 4

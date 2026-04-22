@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bagaenui0u2ni" path="res://art/Tilesheet/stair_tilesheet.png" id="8_2x160"]
 [ext_resource type="PackedScene" uid="uid://bclorvpbmwu0n" path="res://_Main/Level3/floor_switch_colour/floor_switch_colour.tscn" id="11_583a6"]
 [ext_resource type="PackedScene" uid="uid://bx66tuty2v77e" path="res://_Main/Level1/door.tscn" id="11_dq28a"]
+[ext_resource type="Script" uid="uid://c76kb12vbiq0h" path="res://_Main/Level3/floor_switch_colour/floor_switch_colour.gd" id="12_prrh5"]
 [ext_resource type="Script" uid="uid://dxwglyyccnpt0" path="res://_Main/Level1/level_end_trigger.gd" id="12_umshf"]
 [ext_resource type="Texture2D" uid="uid://qqfn4onkeg7j" path="res://_Main/Level3/Crate_colour/Sprites/block5.png" id="13_583a6"]
 [ext_resource type="PackedScene" uid="uid://c41ywpnm7v6fu" path="res://_Main/Player/player.tscn" id="13_wiag4"]
@@ -540,7 +541,7 @@ size = Vector2(49.466255, 20)
 size = Vector2(143.11604, 14.53244)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xmjml"]
-size = Vector2(548.27734, 2.219223)
+size = Vector2(825.9551, 11.485283)
 
 [node name="Level3" type="Node2D" unique_id=986222045]
 script = ExtResource("1_o2m2e")
@@ -603,10 +604,14 @@ metadata/_edit_group_ = true
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_wvqtl")
 
-[node name="FloorSwitch" parent="." unique_id=1662818470 instance=ExtResource("11_583a6")]
+[node name="FloorSwitch_colour" parent="." unique_id=1662818470 instance=ExtResource("11_583a6")]
+position = Vector2(768, -16)
+script = ExtResource("12_prrh5")
+unpressed_texture = null
+pressed_texture = null
 
 [node name="Crate_colour" parent="." unique_id=2143499831 instance=ExtResource("16_6vd43")]
-position = Vector2(507, 85)
+position = Vector2(386, 145)
 sprite5 = ExtResource("13_583a6")
 sprite6 = ExtResource("14_prrh5")
 
@@ -685,7 +690,7 @@ rotation = 0.46251225
 shape = SubResource("RectangleShape2D_v4pb2")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions" unique_id=1978408231]
-position = Vector2(1275.5015, -264.98853)
+position = Vector2(1813.9999, -207.00002)
 rotation = -0.46251225
 shape = SubResource("RectangleShape2D_xmjml")
 

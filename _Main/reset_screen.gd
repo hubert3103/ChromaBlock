@@ -3,9 +3,12 @@ extends CanvasLayer
 @export var toggle_action := "reset"
 @export var delay := 3.0   # seconds before reset is allowed
 
+
+
 var can_open := false
 
 func _ready():
+	$YesButton.grab_focus()
 	visible = false
 	
 	# delay before reset is allowed
@@ -30,3 +33,7 @@ func _on_restart_button_pressed():
 func _on_cancel_button_pressed():
 	visible = false
 	get_tree().paused = false
+	
+	
+	
+	

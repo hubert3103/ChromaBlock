@@ -4,7 +4,8 @@
 [ext_resource type="Script" uid="uid://y6maj44f5cwt" path="res://hubert/switch.gd" id="1_x7lr5"]
 [ext_resource type="AudioStream" uid="uid://dnqsiuyb0suvb" path="res://art/soundEffects/dragon-studio-light-switch-382712.mp3" id="2_s7pnu"]
 [ext_resource type="AudioStream" uid="uid://dgiu77umvrbk3" path="res://art/soundEffects/dragon-studio-light-switch-on-382714.mp3" id="3_lkihc"]
-[ext_resource type="Texture2D" uid="uid://kunh7viol3b5" path="res://art/Isometric/switchWallOff_E.png" id="3_ohpec"]
+[ext_resource type="Texture2D" uid="uid://hw1bmii0qhlk" path="res://art/coloured assets/switchWallOnGreen_E.png" id="4_lkihc"]
+[ext_resource type="Texture2D" uid="uid://c3hy5vrsnfbls" path="res://art/coloured assets/switchWallOffGreen_E.png" id="5_1k3j4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x1xb"]
 size = Vector2(106, 110)
@@ -13,8 +14,8 @@ size = Vector2(106, 110)
 script = ExtResource("1_x7lr5")
 sound_on = ExtResource("2_s7pnu")
 sound_off = ExtResource("3_lkihc")
-unpressed_texture = ExtResource("1_7x1xb")
-pressed_texture = ExtResource("3_ohpec")
+unpressed_texture = ExtResource("4_lkihc")
+pressed_texture = ExtResource("5_1k3j4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1685217969]
 texture = ExtResource("1_7x1xb")

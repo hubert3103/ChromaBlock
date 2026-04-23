@@ -19,3 +19,7 @@ func _on_start_button_pressed() -> void:
 func _on_exit_button_pressed() -> void:
 	get_tree().quit() 
 	print("Exit button clicked")
+
+
+func _on_how_to_play_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://_Main/HowToPlay/how_to_play.tscn")

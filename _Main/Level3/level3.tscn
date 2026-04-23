@@ -552,6 +552,9 @@ size = Vector2(143.11604, 14.53244)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xmjml"]
 size = Vector2(825.9551, 11.485283)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prrh5"]
+size = Vector2(164.63544, 10.17334)
+
 [node name="Level3" type="Node2D" unique_id=986222045]
 script = ExtResource("1_o2m2e")
 
@@ -703,6 +706,16 @@ shape = SubResource("RectangleShape2D_v4pb2")
 position = Vector2(1813.9999, -207.00002)
 rotation = -0.46251225
 shape = SubResource("RectangleShape2D_xmjml")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Collisions" unique_id=1630913085]
+position = Vector2(1371, -60.00004)
+rotation = 0.4537856
+shape = SubResource("RectangleShape2D_prrh5")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Collisions" unique_id=822478125]
+position = Vector2(1249.0001, -41.000053)
+rotation = 2.3561945
+shape = SubResource("RectangleShape2D_prrh5")
 
 [node name="Reset screen" parent="." unique_id=756244072 instance=ExtResource("16_gc1mh")]
 process_mode = 3

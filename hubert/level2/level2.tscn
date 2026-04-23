@@ -1,8 +1,10 @@
 [gd_scene format=4 uid="uid://6yui6yb8abet"]
 
 [ext_resource type="TileSet" uid="uid://c82juksd8fyg1" path="res://isometricTileset.tres" id="1_rukv8"]
+[ext_resource type="Texture2D" uid="uid://cbqdkqqn1ji87" path="res://art/Isometric/switchWallOn_E.png" id="4_cxx3k"]
 [ext_resource type="Script" uid="uid://clvu210fa87mj" path="res://_Main/Level1/level_1.gd" id="5_3fu2t"]
 [ext_resource type="FontFile" uid="uid://ylgw03k7bb5x" path="res://art/Fonts/3DIsometric-Bold.otf" id="5_rkdi3"]
+[ext_resource type="Texture2D" uid="uid://kunh7viol3b5" path="res://art/Isometric/switchWallOff_E.png" id="5_s156k"]
 [ext_resource type="PackedScene" uid="uid://t75xcadrkxgr" path="res://_Main/Level1/hud.tscn" id="6_3ywgy"]
 [ext_resource type="PackedScene" uid="uid://c41ywpnm7v6fu" path="res://_Main/Player/player.tscn" id="7_5cri7"]
 [ext_resource type="PackedScene" uid="uid://by72dlxhlmjlc" path="res://hubert/switch.tscn" id="8_3fu2t"]
@@ -44,8 +46,9 @@ tile_set = ExtResource("1_rukv8")
 
 [node name="Switch" parent="." unique_id=796593066 instance=ExtResource("8_3fu2t")]
 position = Vector2(738, -240)
+unpressed_texture = ExtResource("4_cxx3k")
+pressed_texture = ExtResource("5_s156k")
 door_node = NodePath("../door")
-switch_color = "Red"
 
 [node name="StartPosition" type="Node2D" parent="." unique_id=1010738862]
 position = Vector2(254, 125)

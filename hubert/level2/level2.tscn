@@ -38,6 +38,7 @@ tile_set = ExtResource("1_rukv8")
 [node name="Switch" parent="." unique_id=796593066 instance=ExtResource("8_3fu2t")]
 position = Vector2(738, -240)
 door_node = NodePath("../door")
+switch_color = "Red"
 
 [node name="StartPosition" type="Node2D" parent="." unique_id=1010738862]
 position = Vector2(254, 125)

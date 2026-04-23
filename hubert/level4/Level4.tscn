@@ -20,6 +20,9 @@ size = Vector2(1436.9248, 26)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5821"]
 size = Vector2(312.53064, 41.033367)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r250a"]
+size = Vector2(222.24567, 3.8217201)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_7pfqx"]
 radius = 54.08327
 
@@ -91,11 +94,18 @@ rotation = -2.6703537
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_r5821")
 
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=295711260]
+position = Vector2(2284.9998, -186.99991)
+rotation = -0.47123894
+scale = Vector2(1.462481, 2.9053261)
+shape = SubResource("RectangleShape2D_r250a")
+
 [node name="StartPosition" type="Node2D" parent="." unique_id=1243104366]
 position = Vector2(12, 128)
 
 [node name="LevelEndTrigger" type="Area2D" parent="StartPosition" unique_id=1332701586]
-position = Vector2(2419, -337)
+position = Vector2(2412, -318)
+scale = Vector2(1, 0.73065054)
 script = ExtResource("8_ee3vq")
 metadata/_edit_group_ = true
 

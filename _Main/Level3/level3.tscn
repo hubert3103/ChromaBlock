@@ -553,17 +553,28 @@ size = Vector2(143.11604, 14.53244)
 size = Vector2(825.9551, 11.485283)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prrh5"]
-size = Vector2(164.63544, 10.17334)
+size = Vector2(62.58474, 10.17334)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xiyu"]
+size = Vector2(3982.5, 98)
 
 [node name="Level3" type="Node2D" unique_id=986222045]
 script = ExtResource("1_o2m2e")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1275940084]
 offset_left = -758.0
-offset_top = -1043.0
-offset_right = 2668.0
+offset_top = -1209.0
+offset_right = 3113.0
 offset_bottom = 932.0
 color = Color(0.8627451, 0.7254902, 0.58431375, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1145609719]
+offset_left = 2504.0
+offset_top = -1188.0
+offset_right = 3089.0
+offset_bottom = -1039.0
+theme_override_font_sizes/font_size = 32
+text = "Now with 65% more puzzle per puzzle"
 
 [node name="FloorLayer" type="TileMapLayer" parent="." unique_id=192260591]
 tile_map_data = PackedByteArray("AAACAP//AAAIAAMAAAABAAAAAAAIAAMAAAAAAAEAAAAIAAMAAAADAP7/AAAIAAMAAAAEAP7/AAAIAAMAAAAFAP7/AAAIAAMAAAAGAP7/AAAIAAMAAAAFAP//AAAIAAMAAAAEAAAAAAAIAAMAAAADAAEAAAAIAAMAAAACAAEAAAAIAAMAAAABAAEAAAAIAAMAAAACAAAAAAAIAAMAAAADAP//AAAIAAMAAAAEAP//AAAIAAMAAAADAAAAAAAIAAMAAAAHAP7/AAAIAAMAAAAFAAAAAAAIAAMAAAAGAP//AAAIAAMAAAAEAAEAAAAIAAMAAAAFAPz/AAAIAAMAAAAEAP3/AAAIAAMAAAAGAPz/AAAIAAMAAAAFAP3/AAAIAAMAAAAGAP3/AAAIAAMAAAAHAPz/AAAIAAMAAAAIAPz/AAAIAAMAAAAHAP3/AAAIAAMAAAAIAP3/AAAIAAMAAAAJAPz/AAAIAAMAAAAKAPv/AAAIAAMAAAALAPr/AAAIAAMAAAD//wEAAAAIAAMAAAAAAAAAAAAIAAMAAAABAP//AAAIAAMAAAACAP7/AAAIAAMAAAADAP3/AAAIAAMAAAAEAPz/AAAIAAMAAAAMAPn/AAAIAAMAAAANAPj/AAAIAAMAAAAOAPf/AAAIAAMAAAAPAPb/AAAIAAMAAAAQAPX/AAAIAAMAAAAJAPv/AAAIAAMAAAA=")
@@ -708,14 +719,29 @@ rotation = -0.46251225
 shape = SubResource("RectangleShape2D_xmjml")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Collisions" unique_id=1630913085]
-position = Vector2(1371, -60.00004)
+position = Vector2(1420.8577, -35.682907)
 rotation = 0.4537856
 shape = SubResource("RectangleShape2D_prrh5")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Collisions" unique_id=822478125]
-position = Vector2(1249.0001, -41.000053)
-rotation = 2.3561945
-shape = SubResource("RectangleShape2D_prrh5")
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Collisions" unique_id=681621621]
+position = Vector2(1187, -1253)
+shape = SubResource("RectangleShape2D_5xiyu")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Collisions" unique_id=887772544]
+position = Vector2(1173, 985)
+shape = SubResource("RectangleShape2D_5xiyu")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Collisions" unique_id=258868189]
+position = Vector2(3161, -330)
+rotation = 1.5707964
+scale = Vector2(0.67999846, 1)
+shape = SubResource("RectangleShape2D_5xiyu")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Collisions" unique_id=945896330]
+position = Vector2(-781, -303)
+rotation = 1.5707964
+scale = Vector2(0.67999846, 0.67999846)
+shape = SubResource("RectangleShape2D_5xiyu")
 
 [node name="Reset screen" parent="." unique_id=756244072 instance=ExtResource("16_gc1mh")]
 process_mode = 3

@@ -26,23 +26,27 @@ func _on_body_entered(body: Node2D) -> void:
 			print("Red active check:", body.is_red_active())
 
 		if body.has_method("is_red_active") and body.is_red_active():
-			print("RED FACE MATCHED - ACTIVATING SWITCH")
-			is_active = true
-			activate()
+			if not is_active:
+				print("RED FACE MATCHED - ACTIVATING SWITCH")
+				is_active = true
+				activate()
 		else:
 			print("Wrong color on top - switch stays off")
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.has_method("get_crate_id") and body.get_crate_id() == required_id:
-		is_active = false
-		deactivate()
+		print("EXIT - was active?", is_active)
+
+		if is_active:
+			is_active = false
+			deactivate()
 
 
 func activate():
 	print("Switch ON")
 
-	if $Sprite2D:
+	if $Sprite2D and pressed_texture:
 		$Sprite2D.texture = pressed_texture
 
 	if switch_sfx:
@@ -58,7 +62,7 @@ func activate():
 func deactivate():
 	print("Switch OFF")
 
-	if $Sprite2D:
+	if $Sprite2D and unpressed_texture:
 		$Sprite2D.texture = unpressed_texture
 
 	if switch_sfx:

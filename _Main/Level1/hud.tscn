@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://t75xcadrkxgr"]
 
 [ext_resource type="FontFile" uid="uid://ylgw03k7bb5x" path="res://art/Fonts/3DIsometric-Bold.otf" id="1_18r53"]
+[ext_resource type="Script" uid="uid://dax5c5rg4gru0" path="res://_Main/level_end.gd" id="1_iklkh"]
 
 [node name="LevelEndHUD" type="CanvasLayer" unique_id=735243495]
+script = ExtResource("1_iklkh")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1000634593]
 anchors_preset = 15
@@ -51,3 +53,5 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "Next Level"
+
+[connection signal="pressed" from="NextLevelButton" to="." method="_on_next_level_button_pressed"]

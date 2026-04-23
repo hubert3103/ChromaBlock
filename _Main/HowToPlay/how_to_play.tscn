@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://x0ffhqdyf332"]
 
+[ext_resource type="Script" uid="uid://c5jyievhyii1w" path="res://_Main/HowToPlay/how_to_play.gd" id="1_4rvnl"]
 [ext_resource type="Texture2D" uid="uid://b7sddtdutr7t3" path="res://art/mainmenu.png" id="1_bwf5o"]
 [ext_resource type="FontFile" uid="uid://c7xxmurl86s5j" path="res://art/Fonts/3DIsometric-Bold.ttf" id="2_ddgdw"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4rvnl")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1409606778]
 layout_mode = 1
@@ -84,7 +86,7 @@ layout_mode = 0
 offset_left = 259.0
 offset_top = 154.0
 offset_right = 837.0
-offset_bottom = 486.0
+offset_bottom = 519.0
 bbcode_enabled = true
 text = "
 
@@ -98,8 +100,12 @@ If something changes, pay attention.
 [b]Controls[/b]
 
 WASD / Arrow Keys – Move  
+E – Interact
 R – Reset level  
+
 
 
 "
 scroll_active = false
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

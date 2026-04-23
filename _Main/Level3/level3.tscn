@@ -58,7 +58,9 @@ texture_region_size = Vector2i(256, 128)
 0:3/0 = 0
 0:3/0/y_sort_origin = 32
 1:2/0 = 0
+1:2/0/y_sort_origin = 97
 1:3/0 = 0
+1:3/0/y_sort_origin = 32
 2:1/0 = 0
 2:2/0 = 0
 2:3/0 = 0
@@ -71,7 +73,9 @@ texture_region_size = Vector2i(256, 128)
 4:3/0 = 0
 4:3/0/y_sort_origin = 32
 5:2/0 = 0
+5:2/0/y_sort_origin = 97
 5:3/0 = 0
+5:3/0/y_sort_origin = 32
 6:1/0 = 0
 6:2/0 = 0
 6:3/0 = 0
@@ -83,10 +87,15 @@ texture_region_size = Vector2i(256, 128)
 8:2/0 = 0
 8:3/0 = 0
 9:2/0 = 0
+9:2/0/y_sort_origin = 97
 9:3/0 = 0
+9:3/0/y_sort_origin = 32
 10:1/0 = 0
+10:1/0/y_sort_origin = 162
 10:2/0 = 0
+10:2/0/y_sort_origin = 97
 10:3/0 = 0
+10:3/0/y_sort_origin = 32
 11:2/0 = 0
 11:2/0/y_sort_origin = 97
 11:3/0 = 0
@@ -547,11 +556,10 @@ size = Vector2(825.9551, 11.485283)
 script = ExtResource("1_o2m2e")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1275940084]
-visible = false
-offset_left = -759.0
-offset_top = -289.0
-offset_right = 416.0
-offset_bottom = 389.0
+offset_left = -758.0
+offset_top = -1043.0
+offset_right = 2668.0
+offset_bottom = 932.0
 color = Color(0.8627451, 0.7254902, 0.58431375, 1)
 
 [node name="FloorLayer" type="TileMapLayer" parent="." unique_id=192260591]
@@ -561,6 +569,7 @@ tile_set = SubResource("TileSet_c2y7v")
 [node name="WallLayerRight" type="TileMapLayer" parent="." unique_id=729939547]
 y_sort_enabled = true
 position = Vector2(1, 0)
+tile_map_data = PackedByteArray("AAAJAPr/BQABAAIAAAAJAPv/BQABAAMAAAAIAPn/QwAMAAEAAAAIAPr/QwAMAAIAAAAIAPv/QwAMAAMAAAAAAP7/LgAAAAEAAAAAAP//LgAAAAIAAAAAAAAALgAAAAMAAAD/////BQAAAAEAAAD//wAABQAAAAIAAAD//wEABQAAAAMAAAABAP3/BQAAAAEAAAABAP7/BQAAAAIAAAABAP//BQAAAAMAAAACAPz/BQAAAAEAAAACAP3/BQAAAAIAAAACAP7/BQAAAAMAAAADAPv/BQAAAAEAAAADAPz/BQAAAAIAAAADAP3/BQAAAAMAAAAEAPr/BQAAAAEAAAAEAPv/BQAAAAIAAAAEAPz/BQAAAAMAAAAHAPn/QwAMAAEAAAAHAPr/QwAMAAIAAAAHAPv/QwAMAAMAAAAGAPn/QwAMAAEAAAAGAPr/QwAMAAIAAAAGAPv/QwAMAAMAAAAFAPn/QwAMAAEAAAAFAPr/QwAMAAIAAAAFAPv/QwAMAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
 
@@ -605,10 +614,11 @@ position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_wvqtl")
 
 [node name="FloorSwitch_colour" parent="." unique_id=1662818470 instance=ExtResource("11_583a6")]
-position = Vector2(768, -16)
+position = Vector2(641, 48)
 script = ExtResource("12_prrh5")
 unpressed_texture = null
 pressed_texture = null
+door_node = NodePath("../door")
 
 [node name="Crate_colour" parent="." unique_id=2143499831 instance=ExtResource("16_6vd43")]
 position = Vector2(386, 145)
@@ -621,13 +631,13 @@ speed = 150
 
 [node name="TopLayer" type="TileMapLayer" parent="." unique_id=862732334]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAKAPr/LgAVAAIAAAAKAPv/LgAVAAMAAAA=")
+tile_map_data = PackedByteArray("AAAKAPr/LgAVAAIAAAAKAPv/LgAVAAMAAAD/////RQAIAAEAAAD//wAARQAIAAIAAAD//wEARQAIAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
 
 [node name="TopLayer2" type="TileMapLayer" parent="." unique_id=1874711443]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAKAPr/LgAVAAIAAAAKAPv/LgAVAAMAAAA=")
+tile_map_data = PackedByteArray("AAAKAPr/LgAVAAIAAAAKAPv/LgAVAAMAAAAAAP3/KgALAAIAAAAAAP7/KgALAAMAAAACAPv/KgADAAIAAAACAPz/KgADAAMAAAABAPz/KgAHAAIAAAABAP3/KgAHAAMAAAAGAPj/KgAJAAIAAAAGAPn/KgAJAAMAAAAIAPj/KgABAAIAAAAIAPn/KgABAAMAAAAHAPj/KgAFAAIAAAAHAPn/KgAFAAMAAAA=")
 tile_set = SubResource("TileSet_c2y7v")
 occlusion_enabled = false
 

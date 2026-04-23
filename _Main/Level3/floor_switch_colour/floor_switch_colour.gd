@@ -73,3 +73,4 @@ func deactivate():
 		var door = get_node(door_node)
 		if door:
 			door.call_deferred("close")
+			

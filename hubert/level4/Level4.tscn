@@ -1,15 +1,15 @@
 [gd_scene format=4 uid="uid://ivmc6nojxtlo"]
 
-[ext_resource type="Script" uid="uid://clvu210fa87mj" path="res://_Main/Level1/level_1.gd" id="1_0gyev"]
-[ext_resource type="TileSet" uid="uid://c82juksd8fyg1" path="res://isometricTileset.tres" id="1_xwq1a"]
-[ext_resource type="PackedScene" uid="uid://c218y6l7fu1rj" path="res://switch_green.tscn" id="2_0jjdj"]
-[ext_resource type="PackedScene" uid="uid://bx66tuty2v77e" path="res://_Main/Level1/door.tscn" id="2_nwkdu"]
-[ext_resource type="PackedScene" uid="uid://bng8t2lovv28k" path="res://switch_red.tscn" id="3_0noen"]
-[ext_resource type="PackedScene" uid="uid://c41ywpnm7v6fu" path="res://_Main/Player/player.tscn" id="4_ahdtj"]
-[ext_resource type="TileSet" uid="uid://lnv6pxbx5iwf" path="res://decoration.tres" id="7_urrdg"]
-[ext_resource type="Script" uid="uid://dxwglyyccnpt0" path="res://_Main/Level1/level_end_trigger.gd" id="8_nvqqt"]
-[ext_resource type="PackedScene" uid="uid://t75xcadrkxgr" path="res://_Main/Level1/hud.tscn" id="9_sjj3w"]
-[ext_resource type="FontFile" uid="uid://ylgw03k7bb5x" path="res://art/Fonts/3DIsometric-Bold.otf" id="10_picug"]
+[ext_resource type="Script" uid="uid://clvu210fa87mj" path="res://_Main/Level1/level_1.gd" id="1_r250a"]
+[ext_resource type="TileSet" uid="uid://c82juksd8fyg1" path="res://isometricTileset.tres" id="2_b5f4m"]
+[ext_resource type="PackedScene" uid="uid://c218y6l7fu1rj" path="res://switch_green.tscn" id="3_a1prn"]
+[ext_resource type="PackedScene" uid="uid://bng8t2lovv28k" path="res://switch_red.tscn" id="4_sxv66"]
+[ext_resource type="PackedScene" uid="uid://c41ywpnm7v6fu" path="res://_Main/Player/player.tscn" id="5_53xsx"]
+[ext_resource type="PackedScene" uid="uid://bx66tuty2v77e" path="res://_Main/Level1/door.tscn" id="6_wddfj"]
+[ext_resource type="TileSet" uid="uid://lnv6pxbx5iwf" path="res://decoration.tres" id="7_ujmn6"]
+[ext_resource type="Script" uid="uid://dxwglyyccnpt0" path="res://_Main/Level1/level_end_trigger.gd" id="8_ee3vq"]
+[ext_resource type="PackedScene" uid="uid://t75xcadrkxgr" path="res://_Main/Level1/hud.tscn" id="9_opuef"]
+[ext_resource type="FontFile" uid="uid://ylgw03k7bb5x" path="res://art/Fonts/3DIsometric-Bold.otf" id="10_x1dma"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gic7"]
 size = Vector2(673.22925, 28)
@@ -24,47 +24,54 @@ size = Vector2(312.53064, 41.033367)
 radius = 54.08327
 
 [node name="Level4" type="Node2D" unique_id=4262503]
-script = ExtResource("1_0gyev")
+script = ExtResource("1_r250a")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1935703850]
+offset_left = -758.0
+offset_top = -1209.0
+offset_right = 3113.0
+offset_bottom = 932.0
+color = Color(0.8627451, 0.7254902, 0.58431375, 1)
 
 [node name="floor" type="TileMapLayer" parent="." unique_id=1206819794]
 tile_map_data = PackedByteArray("AAABAAIAAAAIAAMAAAAAAAIAAAAIAAMAAAD//wIAAAAIAAMAAAAAAAEAAAAIAAMAAAABAAEAAAAIAAMAAAACAAEAAAAIAAMAAAADAAAAAAAIAAMAAAACAAAAAAAIAAMAAAABAAAAAAAIAAMAAAACAP//AAAIAAMAAAADAP//AAAIAAMAAAAEAP//AAAIAAMAAAAJAP7/AAAIAAMAAAALAPz/AAAIAAMAAAAKAP3/AAAIAAMAAAADAP7/AAAIAAMAAAAEAP7/AAAIAAMAAAAFAP7/AAAIAAMAAAAGAP7/AAAIAAMAAAAHAP7/AAAIAAMAAAAIAP7/AAAIAAMAAAAJAP3/AAAIAAMAAAAEAP3/AAAIAAMAAAAFAP3/AAAIAAMAAAAGAP3/AAAIAAMAAAAHAP3/AAAIAAMAAAAIAP3/AAAIAAMAAAAFAPz/AAAIAAMAAAAGAPz/AAAIAAMAAAAHAPz/AAAIAAMAAAAJAPz/AAAIAAMAAAAKAPz/AAAIAAMAAAAIAPz/AAAIAAMAAAAMAPv/AAAIAAMAAAALAPv/AAAIAAMAAAAKAPv/AAAIAAMAAAAJAPv/AAAIAAMAAAAIAPv/AAAIAAMAAAAHAPv/AAAIAAMAAAAGAPv/AAAIAAMAAAAHAPr/AAAIAAMAAAAIAPr/AAAIAAMAAAAJAPr/AAAIAAMAAAAKAPr/AAAIAAMAAAALAPr/AAAIAAMAAAAMAPr/AAAIAAMAAAANAPr/AAAIAAMAAAD+/wIAAAAIAAMAAAD//wEAAAAIAAMAAAAAAAAAAAAIAAMAAAABAP//AAAIAAMAAAACAP7/AAAIAAMAAAADAP3/AAAIAAMAAAAEAPz/AAAIAAMAAAAFAPv/AAAIAAMAAAAGAPr/AAAIAAMAAAAHAPn/AAAIAAMAAAAIAPn/AAAIAAMAAAAJAPn/AAAIAAMAAAAKAPn/AAAIAAMAAAALAPn/AAAIAAMAAAAMAPn/AAAIAAMAAAANAPj/AAAIAAMAAAANAPn/AAAIAAMAAAAOAPn/AAAIAAMAAAAPAPj/AAAIAAMAAAAOAPj/AAAIAAMAAAAIAPj/AAAIAAMAAAAJAPj/AAAIAAMAAAAKAPj/AAAIAAMAAAALAPj/AAAIAAMAAAAMAPj/AAAIAAMAAAAQAPf/AAAIAAMAAAARAPb/AAAIAAMAAAASAPX/AAAIAAMAAAA=")
-tile_set = ExtResource("1_xwq1a")
+tile_set = ExtResource("2_b5f4m")
 
 [node name="Walllayer" type="TileMapLayer" parent="." unique_id=1905015438]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD+/wAABQAAAAEAAAD+/wEABQAAAAIAAAD+/wIABQAAAAMAAAAAAP7/BQAAAAEAAAAAAP//BQAAAAIAAAAAAAAABQAAAAMAAAABAP3/BQAAAAEAAAABAP7/BQAAAAIAAAABAP//BQAAAAMAAAACAPz/BQAAAAEAAAACAP3/BQAAAAIAAAACAP7/BQAAAAMAAAADAPv/BQAAAAEAAAADAPz/BQAAAAIAAAADAP3/BQAAAAMAAAAEAPr/BQAAAAEAAAAEAPv/BQAAAAIAAAAEAPz/BQAAAAMAAAAFAPn/BQAAAAEAAAAFAPr/BQAAAAIAAAAFAPv/BQAAAAMAAAAGAPj/BQAAAAEAAAAGAPn/BQAAAAIAAAAGAPr/BQAAAAMAAAAHAPf/BQAAAAEAAAAHAPj/BQAAAAIAAAAHAPn/BQAAAAMAAAAIAPb/BQAGAAEAAAAIAPf/BQAGAAIAAAAIAPj/BQAGAAMAAAD/////LgAAAAEAAAD//wAALgAAAAIAAAD//wEALgAAAAMAAAAJAPb/BQACAAEAAAAJAPf/BQACAAIAAAAJAPj/BQACAAMAAAAKAPb/BQACAAEAAAAKAPf/BQACAAIAAAAKAPj/BQACAAMAAAALAPb/BQACAAEAAAALAPf/BQACAAIAAAALAPj/BQACAAMAAAAMAPb/BQACAAEAAAAMAPf/BQACAAIAAAAMAPj/BQACAAMAAAANAPb/BQACAAEAAAANAPf/BQACAAIAAAANAPj/BQACAAMAAAAOAPb/BQACAAEAAAAOAPf/BQACAAIAAAAOAPj/BQACAAMAAAACAAAABQAAAAEAAAACAAEABQAAAAIAAAACAAIABQAAAAMAAAADAP//BQAAAAEAAAADAAAABQAAAAIAAAADAAEABQAAAAMAAAAEAP7/BQAAAAEAAAAEAP//BQAAAAIAAAAEAAAABQAAAAMAAAAFAP3/BQAGAAEAAAAFAP7/BQAGAAIAAAAFAP//BQAGAAMAAAAGAP3/BQACAAEAAAAGAP7/BQACAAIAAAAGAP//BQACAAMAAAA=")
-tile_set = ExtResource("1_xwq1a")
+tile_set = ExtResource("2_b5f4m")
 
 [node name="Walllayer2" type="TileMapLayer" parent="Walllayer" unique_id=1613052925]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAGAPr/QwAMAAEAAAAGAPv/QwAMAAIAAAAGAPz/QwAMAAMAAAAHAPn/QwAMAAEAAAAHAPr/QwAMAAIAAAAHAPv/QwAMAAMAAAAIAPj/QwAMAAEAAAAIAPn/QwAMAAIAAAAIAPr/QwAMAAMAAAAJAPf/QwAMAAEAAAAJAPj/QwAMAAIAAAAJAPn/QwAMAAMAAAAKAPb/QwAMAAEAAAAKAPf/QwAMAAIAAAAKAPj/QwAMAAMAAAA=")
-tile_set = ExtResource("1_xwq1a")
+tile_set = ExtResource("2_b5f4m")
 
-[node name="SwitchGreen" parent="." unique_id=796593066 instance=ExtResource("2_0jjdj")]
+[node name="SwitchGreen" parent="." unique_id=796593066 instance=ExtResource("3_a1prn")]
 position = Vector2(996, -487)
 door_node = NodePath("../door")
 
-[node name="SwitchRed" parent="." unique_id=442732038 instance=ExtResource("3_0noen")]
+[node name="SwitchRed" parent="." unique_id=442732038 instance=ExtResource("4_sxv66")]
 position = Vector2(1333, -307)
 door_node = NodePath("../door")
 switch_color = "Red"
 
-[node name="Player" parent="." unique_id=113525314 instance=ExtResource("4_ahdtj")]
+[node name="Player" parent="." unique_id=113525314 instance=ExtResource("5_53xsx")]
 z_index = 1
 position = Vector2(634, -79)
 
 [node name="topLayer" type="TileMapLayer" parent="." unique_id=2136721057]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAGAPf/LgAXAAIAAAAGAPj/LgAXAAMAAAAFAPj/LgABAAYAAAAFAPn/LgABAAcAAAAEAPn/LgABAAYAAAAEAPr/LgABAAcAAAADAPr/LgABAAYAAAADAPv/LgABAAcAAAACAPv/LgABAAYAAAACAPz/LgABAAcAAAABAPz/LgAJAAYAAAABAP3/LgAJAAcAAAAPAPb/LgAMAAUAAAAPAPf/LgAMAAYAAAAPAPj/LgAMAAcAAAA=")
-tile_set = ExtResource("1_xwq1a")
+tile_set = ExtResource("2_b5f4m")
 
-[node name="door" parent="." unique_id=1486743604 instance=ExtResource("2_nwkdu")]
+[node name="door" parent="." unique_id=1486743604 instance=ExtResource("6_wddfj")]
 position = Vector2(2080, -40)
 
 [node name="decorationLayer" type="TileMapLayer" parent="." unique_id=1294043958]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAMAPX/KgANAAIAAAAMAPb/KgANAAMAAAALAPX/KgANAAIAAAALAPb/KgANAAMAAAAKAPX/KgANAAIAAAAKAPb/KgANAAMAAAAJAPX/KgANAAIAAAAJAPb/KgANAAMAAAANAPX/KgANAAIAAAANAPb/KgANAAMAAAAOAPX/KgANAAIAAAAOAPb/KgANAAMAAAAPAPX/KgANAAIAAAAPAPb/KgANAAMAAAD9/wEARQALAAIAAAD9/wIARQALAAMAAAAEAPr/RQAAAAIAAAAEAPv/RQAAAAMAAAAHAPr/RQAAAAIAAAAHAPv/RQAAAAMAAAA=")
-tile_set = ExtResource("7_urrdg")
+tile_set = ExtResource("7_ujmn6")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=170771388]
 
@@ -89,14 +96,14 @@ position = Vector2(12, 128)
 
 [node name="LevelEndTrigger" type="Area2D" parent="StartPosition" unique_id=1332701586]
 position = Vector2(2419, -337)
-script = ExtResource("8_nvqqt")
+script = ExtResource("8_ee3vq")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartPosition/LevelEndTrigger" unique_id=160607834]
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_7pfqx")
 
-[node name="LevelEndHUD" parent="." unique_id=735243495 instance=ExtResource("9_sjj3w")]
+[node name="LevelEndHUD" parent="." unique_id=735243495 instance=ExtResource("9_opuef")]
 visible = false
 
 [node name="StartHUD" type="CanvasLayer" parent="." unique_id=471610787]
@@ -128,7 +135,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("10_picug")
+theme_override_fonts/font = ExtResource("10_x1dma")
 theme_override_font_sizes/font_size = 64
 text = "Level 4
 "

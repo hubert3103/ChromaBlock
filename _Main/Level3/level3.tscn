@@ -556,7 +556,7 @@ size = Vector2(825.9551, 11.485283)
 size = Vector2(62.58474, 10.17334)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xiyu"]
-size = Vector2(3982.5, 98)
+size = Vector2(3955.9604, 98)
 
 [node name="Level3" type="Node2D" unique_id=986222045]
 script = ExtResource("1_o2m2e")
@@ -732,15 +732,15 @@ position = Vector2(1173, 985)
 shape = SubResource("RectangleShape2D_5xiyu")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Collisions" unique_id=258868189]
-position = Vector2(3161, -330)
+position = Vector2(3168, -116)
 rotation = 1.5707964
-scale = Vector2(0.67999846, 1)
+scale = Vector2(0.5999975, 1)
 shape = SubResource("RectangleShape2D_5xiyu")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Collisions" unique_id=945896330]
-position = Vector2(-781, -303)
+position = Vector2(-814, -134)
 rotation = 1.5707964
-scale = Vector2(0.67999846, 0.67999846)
+scale = Vector2(0.5599997, 1.0399997)
 shape = SubResource("RectangleShape2D_5xiyu")
 
 [node name="Reset screen" parent="." unique_id=756244072 instance=ExtResource("16_gc1mh")]

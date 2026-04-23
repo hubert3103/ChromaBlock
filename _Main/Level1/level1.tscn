@@ -30,11 +30,11 @@ size = Vector2(548.27734, 2.219223)
 script = ExtResource("1_jj0qm")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1275940084]
-visible = false
-offset_left = -759.0
-offset_top = -289.0
-offset_right = 416.0
-offset_bottom = 389.0
+offset_left = -1813.0001
+offset_top = -2247.0
+offset_right = -638.0001
+offset_bottom = -1569.0
+scale = Vector2(5.034166, 5.861539)
 color = Color(0.8627451, 0.7254902, 0.58431375, 1)
 
 [node name="FloorLayer" type="TileMapLayer" parent="." unique_id=192260591]

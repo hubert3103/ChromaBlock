@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 @export var toggle_action := "reset"
 @export var delay := 3.0   # seconds before reset is allowed
@@ -8,7 +8,6 @@ extends CanvasLayer
 var can_open := false
 
 func _ready():
-	$YesButton.grab_focus()
 	visible = false
 	
 	# delay before reset is allowed
@@ -22,6 +21,7 @@ func _input(event):
 		
 	if event.is_action_pressed(toggle_action):
 		visible = true
+		$RestartButton.grab_focus()
 		get_tree().paused = true
 
 

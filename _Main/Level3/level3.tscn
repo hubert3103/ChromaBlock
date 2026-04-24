@@ -19,6 +19,7 @@
 [ext_resource type="FontFile" uid="uid://ylgw03k7bb5x" path="res://art/Fonts/3DIsometric-Bold.otf" id="15_esln7"]
 [ext_resource type="PackedScene" uid="uid://cgsi0ag8eakqp" path="res://_Main/Level3/Crate_colour/crate_colour.tscn" id="16_6vd43"]
 [ext_resource type="PackedScene" uid="uid://bna6hi82dp64x" path="res://_Main/reset_screen.tscn" id="16_gc1mh"]
+[ext_resource type="PackedScene" uid="uid://ivmc6nojxtlo" path="res://Hubert/level4/Level4.tscn" id="18_5xiyu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vpdkp"]
 texture = ExtResource("2_ypky2")
@@ -657,6 +658,7 @@ occlusion_enabled = false
 
 [node name="LevelEndHUD" parent="." unique_id=735243495 instance=ExtResource("14_6bmew")]
 visible = false
+next_scene = ExtResource("18_5xiyu")
 
 [node name="StartHUD" type="CanvasLayer" parent="." unique_id=1072499108]
 visible = false

@@ -7,9 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://kunh7viol3b5" path="res://art/Isometric/switchWallOff_E.png" id="5_s156k"]
 [ext_resource type="PackedScene" uid="uid://t75xcadrkxgr" path="res://_Main/Level1/hud.tscn" id="6_3ywgy"]
 [ext_resource type="PackedScene" uid="uid://c41ywpnm7v6fu" path="res://_Main/Player/player.tscn" id="7_5cri7"]
-[ext_resource type="PackedScene" uid="uid://by72dlxhlmjlc" path="res://hubert/switch.tscn" id="8_3fu2t"]
+[ext_resource type="PackedScene" uid="uid://by72dlxhlmjlc" path="res://Hubert/switch.tscn" id="8_3fu2t"]
 [ext_resource type="Script" uid="uid://dxwglyyccnpt0" path="res://_Main/Level1/level_end_trigger.gd" id="8_cxx3k"]
 [ext_resource type="PackedScene" uid="uid://bx66tuty2v77e" path="res://_Main/Level1/door.tscn" id="9_3ywgy"]
+[ext_resource type="PackedScene" uid="uid://dfh8d8rbks578" path="res://_Main/Level3/level3.tscn" id="10_cqkwl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s156k"]
 radius = 54.08327
@@ -18,7 +19,7 @@ radius = 54.08327
 size = Vector2(673.22925, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkdi3"]
-size = Vector2(1335.418, 26)
+size = Vector2(2364.9014, 17.774109)
 
 [node name="Level2" type="Node2D" unique_id=986222045]
 position = Vector2(118, -45)
@@ -32,7 +33,7 @@ offset_bottom = 932.0
 color = Color(0.8627451, 0.7254902, 0.58431375, 1)
 
 [node name="FloorLayer" type="TileMapLayer" parent="." unique_id=192260591]
-tile_map_data = PackedByteArray("AAACAP//AAAIAAMAAAABAAAAAAAIAAMAAAAAAAEAAAAIAAMAAAADAP7/AAAIAAMAAAAEAP7/AAAIAAMAAAAFAP7/AAAIAAMAAAAGAP7/AAAIAAMAAAAFAP//AAAIAAMAAAAEAAAAAAAIAAMAAAADAAEAAAAIAAMAAAACAAEAAAAIAAMAAAABAAEAAAAIAAMAAAACAAAAAAAIAAMAAAADAP//AAAIAAMAAAAEAP//AAAIAAMAAAADAAAAAAAIAAMAAAAHAP7/AAAIAAMAAAAFAAAAAAAIAAMAAAAGAP//AAAIAAMAAAAEAAEAAAAIAAMAAAAFAPz/AAAIAAMAAAAEAP3/AAAIAAMAAAAGAPz/AAAIAAMAAAAFAP3/AAAIAAMAAAAGAP3/AAAIAAMAAAAHAPz/AAAIAAMAAAAIAPz/AAAIAAMAAAAHAP3/AAAIAAMAAAAIAP3/AAAIAAMAAAAJAPz/AAAIAAMAAAAKAPv/AAAIAAMAAAALAPr/AAAIAAMAAAAMAPn/AAAIAAMAAAANAPj/AAAIAAMAAAA=")
+tile_map_data = PackedByteArray("AAACAP//AAAIAAMAAAABAAAAAAAIAAMAAAAAAAEAAAAIAAMAAAADAP7/AAAIAAMAAAAEAP7/AAAIAAMAAAAFAP7/AAAIAAMAAAAGAP7/AAAIAAMAAAAFAP//AAAIAAMAAAAEAAAAAAAIAAMAAAADAAEAAAAIAAMAAAACAAEAAAAIAAMAAAABAAEAAAAIAAMAAAACAAAAAAAIAAMAAAADAP//AAAIAAMAAAAEAP//AAAIAAMAAAADAAAAAAAIAAMAAAAHAP7/AAAIAAMAAAAFAAAAAAAIAAMAAAAGAP//AAAIAAMAAAAEAAEAAAAIAAMAAAAFAPz/AAAIAAMAAAAEAP3/AAAIAAMAAAAGAPz/AAAIAAMAAAAFAP3/AAAIAAMAAAAGAP3/AAAIAAMAAAAHAPz/AAAIAAMAAAAIAPz/AAAIAAMAAAAHAP3/AAAIAAMAAAAIAP3/AAAIAAMAAAAJAPz/AAAIAAMAAAAKAPv/AAAIAAMAAAALAPr/AAAIAAMAAAAMAPn/AAAIAAMAAAANAPj/AAAIAAMAAAAOAPf/AAAIAAMAAAAPAPb/AAAIAAMAAAAQAPX/AAAIAAMAAAARAPT/AAAIAAMAAAASAPP/AAAIAAMAAAATAPL/AAAIAAMAAAAUAPH/AAAIAAMAAAA=")
 tile_set = ExtResource("1_rukv8")
 
 [node name="WallLayer" type="TileMapLayer" parent="." unique_id=729939547]
@@ -66,13 +67,13 @@ shape = SubResource("CircleShape2D_s156k")
 position = Vector2(-178, 45)
 speed = 150
 
+[node name="door" parent="." unique_id=1486743604 instance=ExtResource("9_3ywgy")]
+position = Vector2(1344, 64)
+
 [node name="TopLayer" type="TileMapLayer" parent="." unique_id=862732334]
 tile_map_data = PackedByteArray("AAAKAPr/LgAVAAIAAAAKAPv/LgAVAAMAAAA=")
 tile_set = ExtResource("1_rukv8")
 occlusion_enabled = false
-
-[node name="door" parent="." unique_id=1486743604 instance=ExtResource("9_3ywgy")]
-position = Vector2(1344, 64)
 
 [node name="decoration" type="TileMapLayer" parent="." unique_id=1647350534]
 tile_map_data = PackedByteArray("AAAGAP7/QwAQAAIAAAAGAP//QwAQAAMAAAAEAAAAQwAQAAIAAAAEAAEAQwAQAAMAAAAHAP3/QwAQAAIAAAAHAP7/QwAQAAMAAAA=")
@@ -86,12 +87,13 @@ rotation = 0.47571477
 shape = SubResource("RectangleShape2D_rukv8")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=42142762]
-position = Vector2(1219, 233.00003)
+position = Vector2(1680.6803, 5.3441772)
 rotation = -0.46610475
 shape = SubResource("RectangleShape2D_rkdi3")
 
 [node name="LevelEndHUD" parent="." unique_id=735243495 instance=ExtResource("6_3ywgy")]
 visible = false
+next_scene = ExtResource("10_cqkwl")
 
 [node name="StartHUD" type="CanvasLayer" parent="." unique_id=2128079301]
 visible = false

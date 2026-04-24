@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c41ywpnm7v6fu" path="res://_Main/Player/player.tscn" id="3_8q58m"]
 [ext_resource type="PackedScene" uid="uid://ddaxdlvfei4vg" path="res://_Main/Level1/floor_switch.tscn" id="7_blb4b"]
 [ext_resource type="PackedScene" uid="uid://ceninen4wl1vr" path="res://_Main/Level1/crate.tscn" id="8_q0ovb"]
+[ext_resource type="PackedScene" uid="uid://6yui6yb8abet" path="res://Hubert/level2/level2.tscn" id="9_imnri"]
 [ext_resource type="PackedScene" uid="uid://bx66tuty2v77e" path="res://_Main/Level1/door.tscn" id="9_wvqtl"]
 [ext_resource type="Script" uid="uid://dxwglyyccnpt0" path="res://_Main/Level1/level_end_trigger.gd" id="11_ch3wh"]
 [ext_resource type="PackedScene" uid="uid://t75xcadrkxgr" path="res://_Main/Level1/hud.tscn" id="12_dxddx"]
@@ -116,6 +117,7 @@ occlusion_enabled = false
 
 [node name="LevelEndHUD" parent="." unique_id=735243495 instance=ExtResource("12_dxddx")]
 visible = false
+next_scene = ExtResource("9_imnri")
 
 [node name="StartHUD" type="CanvasLayer" parent="." unique_id=1072499108]
 visible = false
@@ -177,7 +179,9 @@ position = Vector2(1275.5015, -264.98853)
 rotation = -0.46251225
 shape = SubResource("RectangleShape2D_xmjml")
 
-[node name="Reset screen" parent="." unique_id=756244072 instance=ExtResource("16_kne48")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=107682610]
+
+[node name="Reset screen" parent="CanvasLayer" unique_id=756244072 instance=ExtResource("16_kne48")]
 process_mode = 3
 visible = false
 

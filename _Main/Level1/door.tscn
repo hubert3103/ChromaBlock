@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bx66tuty2v77e"]
+
+[ext_resource type="Script" uid="uid://duwjbmlnd6v0a" path="res://_Main/Level1/door.gd" id="1_1f6x6"]
+[ext_resource type="Texture2D" uid="uid://yqmcr8vorfgk" path="res://art/Isometric/wall_N.png" id="2_skse0"]
+[ext_resource type="AudioStream" uid="uid://bwqb058jxyleg" path="res://art/soundEffects/dragon-studio-locking-door-454241.mp3" id="2_u70p1"]
+[ext_resource type="AudioStream" uid="uid://c2tc2bknpk1dx" path="res://art/soundEffects/dragon-studio-door-closed-382707.mp3" id="3_igvgp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o43b0"]
+size = Vector2(93.5, 32)
+
+[node name="door" type="StaticBody2D" unique_id=1486743604 node_paths=PackedStringArray("door_sprite")]
+script = ExtResource("1_1f6x6")
+open_sfx = ExtResource("2_u70p1")
+close_sfx = ExtResource("3_igvgp")
+door_sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1474014858]
+position = Vector2(33, -134)
+scale = Vector2(0.67578125, 0.6582031)
+texture = ExtResource("2_skse0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1428374252]
+position = Vector2(-0.9999999, -7.6293945e-06)
+rotation = 0.4537856
+shape = SubResource("RectangleShape2D_o43b0")
+
+[node name="DoorSound" type="AudioStreamPlayer2D" parent="." unique_id=928076581]

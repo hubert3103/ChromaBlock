@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://t75xcadrkxgr"]
+
+[ext_resource type="FontFile" uid="uid://ylgw03k7bb5x" path="res://art/Fonts/3DIsometric-Bold.otf" id="1_18r53"]
+[ext_resource type="Script" uid="uid://dax5c5rg4gru0" path="res://_Main/level_end.gd" id="1_iklkh"]
+
+[node name="LevelEndHUD" type="CanvasLayer" unique_id=735243495]
+script = ExtResource("1_iklkh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1000634593]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = 246.0
+offset_right = 13.0
+offset_bottom = -253.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.73333335)
+
+[node name="Level complete" type="Label" parent="." unique_id=1778777178]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -342.5
+offset_top = -100.0
+offset_right = 342.5
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_18r53")
+theme_override_font_sizes/font_size = 64
+text = "LEVEL COMPLETE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NextLevelButton" type="Button" parent="." unique_id=1308152749]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.0
+offset_top = 116.0
+offset_right = 169.0
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Next Level"
+
+[connection signal="pressed" from="NextLevelButton" to="." method="_on_next_level_button_pressed"]

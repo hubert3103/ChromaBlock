@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bbror6jjjn5qm"]
+
+[ext_resource type="AudioStream" uid="uid://bvjjs8kqt2ug0" path="res://art/music/plastic-world-fugu-vibes-main-version-16973-01-54.mp3" id="1_p34rl"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=406077781]
+stream = ExtResource("1_p34rl")
+volume_db = -43.332
+autoplay = true

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://by72dlxhlmjlc"]
+
+[ext_resource type="Texture2D" uid="uid://cbqdkqqn1ji87" path="res://art/Isometric/switchWallOn_E.png" id="1_7x1xb"]
+[ext_resource type="Script" uid="uid://y6maj44f5cwt" path="res://hubert/switch.gd" id="1_x7lr5"]
+[ext_resource type="AudioStream" uid="uid://dnqsiuyb0suvb" path="res://art/soundEffects/dragon-studio-light-switch-382712.mp3" id="2_s7pnu"]
+[ext_resource type="AudioStream" uid="uid://dgiu77umvrbk3" path="res://art/soundEffects/dragon-studio-light-switch-on-382714.mp3" id="3_lkihc"]
+[ext_resource type="Texture2D" uid="uid://hw1bmii0qhlk" path="res://art/coloured assets/switchWallOnGreen_E.png" id="4_lkihc"]
+[ext_resource type="Texture2D" uid="uid://c3hy5vrsnfbls" path="res://art/coloured assets/switchWallOffGreen_E.png" id="5_1k3j4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7x1xb"]
+size = Vector2(106, 110)
+
+[node name="Switch" type="Node2D" unique_id=796593066]
+script = ExtResource("1_x7lr5")
+sound_on = ExtResource("2_s7pnu")
+sound_off = ExtResource("3_lkihc")
+unpressed_texture = ExtResource("4_lkihc")
+pressed_texture = ExtResource("5_1k3j4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1685217969]
+texture = ExtResource("1_7x1xb")
+offset = Vector2(26, -106)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1786742840]
+position = Vector2(-1, 77)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=557197240]
+shape = SubResource("RectangleShape2D_7x1xb")
+
+[node name="SwitchSound" type="AudioStreamPlayer2D" parent="." unique_id=441639175]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

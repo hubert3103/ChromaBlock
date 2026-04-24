@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ceninen4wl1vr"]
+
+[ext_resource type="Script" uid="uid://duacwllpnsbu4" path="res://_Main/Level1/crate.gd" id="1_rxb5b"]
+[ext_resource type="Texture2D" uid="uid://bgfmx3lamubgk" path="res://art/Isometric/crate_E.png" id="1_vc41l"]
+[ext_resource type="AudioStream" uid="uid://dgxlkyynlfhfp" path="res://art/soundEffects/freesound_community-stone-push-37412.mp3" id="3_54s8m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxb5b"]
+size = Vector2(61.811012, 60.450005)
+
+[node name="Crate" type="CharacterBody2D" unique_id=2143499831]
+script = ExtResource("1_rxb5b")
+
+[node name="CrateSprite" type="Sprite2D" parent="." unique_id=437452478]
+position = Vector2(0, -145)
+texture = ExtResource("1_vc41l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1592186791]
+position = Vector2(-2.0000005, 11.999998)
+rotation = 0.46425754
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_rxb5b")
+
+[node name="PushSound" type="AudioStreamPlayer2D" parent="." unique_id=1247803083]
+stream = ExtResource("3_54s8m")

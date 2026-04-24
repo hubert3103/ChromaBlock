@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c5jyievhyii1w" path="res://_Main/HowToPlay/how_to_play.gd" id="1_4rvnl"]
 [ext_resource type="Texture2D" uid="uid://b7sddtdutr7t3" path="res://art/mainmenu.png" id="1_bwf5o"]
 [ext_resource type="FontFile" uid="uid://c7xxmurl86s5j" path="res://art/Fonts/3DIsometric-Bold.ttf" id="2_ddgdw"]
+[ext_resource type="PackedScene" uid="uid://b1d002fbm1suj" path="res://_Main/Mainmenu/main_menu.tscn" id="2_xwupe"]
 
 [node name="HowToPlay" type="Control" unique_id=869798120]
 layout_mode = 3
@@ -12,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4rvnl")
+target_scene = ExtResource("2_xwupe")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1409606778]
 layout_mode = 1

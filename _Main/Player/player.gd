@@ -26,25 +26,51 @@ func _physics_process(delta):
 
 	var move_vector = Vector2.ZERO
 
+	# ======================================================
+	# KEYBOARD INPUT (STRICT: requires 2 keys for diagonal)
+	# ======================================================
 	var up = Input.is_action_pressed("move_up")
 	var down = Input.is_action_pressed("move_down")
 	var left = Input.is_action_pressed("move_left")
 	var right = Input.is_action_pressed("move_right")
 
-	# --- REQUIRE 2 KEYS FOR MOVEMENT ---
-	if up and right:
-		move_vector = Vector2(1, -1)   # UpRight
-	elif up and left:
-		move_vector = Vector2(-1, -1)  # UpLeft
-	elif down and right:
-		move_vector = Vector2(1, 1)    # DownRight
-	elif down and left:
-		move_vector = Vector2(-1, 1)   # DownLeft
+	var keyboard_used = up or down or left or right
 
+	if keyboard_used:
+		if up and right:
+			move_vector = Vector2(1, -1)
+		elif up and left:
+			move_vector = Vector2(-1, -1)
+		elif down and right:
+			move_vector = Vector2(1, 1)
+		elif down and left:
+			move_vector = Vector2(-1, 1)
+
+	# ======================================================
+	# CONTROLLER INPUT (smooth analog / stick support)
+	# ======================================================
+	else:
+		var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+
+		if input_dir.length() > 0.2:
+			var angle = input_dir.angle()
+
+			if angle > -PI/2 and angle < 0:
+				move_vector = Vector2(1, -1)
+			elif angle > -PI and angle < -PI/2:
+				move_vector = Vector2(-1, -1)
+			elif angle > 0 and angle < PI/2:
+				move_vector = Vector2(1, 1)
+			else:
+				move_vector = Vector2(-1, 1)
+
+	# ======================================================
+	# APPLY MOVEMENT
+	# ======================================================
 	if move_vector != Vector2.ZERO:
 		move_vector = move_vector.normalized()
 
-		# Apply angle tuning
+		# Apply isometric angle tuning
 		var angle = deg_to_rad(diagonal_angle)
 		var sign_x = sign(move_vector.x)
 		var sign_y = sign(move_vector.y)
@@ -59,17 +85,20 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-	# --- NATURAL PUSHING ---
+	# ======================================================
+	# PUSHING
+	# ======================================================
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 
 		if collider is CharacterBody2D:
-			var push_dir = -collision.get_normal()
-			if collider is CharacterBody2D and collider.has_method("push"):
+			if collider.has_method("push"):
 				collider.push(-collision.get_normal())
 
-	# --- Animation ---
+	# ======================================================
+	# ANIMATION
+	# ======================================================
 	if velocity != Vector2.ZERO:
 		var anim_name = ""
 		var flip_h = false
@@ -96,8 +125,10 @@ func _physics_process(delta):
 		$AnimatedSprite2D.animation = "Idle" + last_direction
 		$AnimatedSprite2D.flip_h = false
 		$AnimatedSprite2D.play()
-	
-	# --- FOOTSTEPS ---
+
+	# ======================================================
+	# FOOTSTEPS
+	# ======================================================
 	if velocity != Vector2.ZERO:
 		step_timer -= delta
 	
